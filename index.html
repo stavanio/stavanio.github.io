@@ -49,7 +49,7 @@ a:hover{color:var(--copper)}
 .mast{display:flex;justify-content:space-between;align-items:baseline;padding-block:1.4rem;border-bottom:1px solid var(--deep-rule)}
 .mast a{text-decoration:none}
 .hero{row-gap:2.5rem;align-items:center;padding-block:clamp(3.5rem,9vw,7rem)}
-.hero-text{grid-column:1/7}
+.hero-text{grid-column:1/10}
 .hero h1{font-size:clamp(3rem,8vw,6.5rem);line-height:.92;letter-spacing:-.035em}
 .role{margin-top:1.25rem;font-size:1rem;color:var(--on-deep)}
 .role span{color:var(--on-deep-2)}
@@ -82,11 +82,18 @@ a:hover{color:var(--copper)}
 .mef a{text-decoration-color:var(--copper-l)}
 .mef a:hover{color:var(--copper-l)}
 .mef-g{row-gap:2.5rem;align-items:end}
+.mef-fig{grid-column:1/9;grid-row:2}
+.rov{width:100%;height:auto}
+.rov .k{fill:none;stroke:var(--on-deep);stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
+.rov .w{fill:none;stroke:var(--deep-rule);stroke-width:1.5}
+.rov .t{fill:none;stroke:var(--copper-l);stroke-width:1.75}
+.rov .cu{fill:var(--copper-l)}
+.rov .cone path{fill:var(--copper-l);fill-opacity:.08;stroke:var(--copper-l);stroke-width:1;stroke-dasharray:3 4}
 .mef-t{grid-column:1/8}
 .mef h2{font-size:clamp(3.2rem,9vw,7rem);line-height:.88;letter-spacing:-.04em}
 .mef .lead{margin-top:1.75rem;max-width:32em;font-family:var(--serif);font-size:clamp(1.2rem,2vw,1.5rem);line-height:1.35}
 .mef .go{margin-top:1.5rem}
-.mef-d{grid-column:9/13}
+.mef-d{grid-column:9/13;grid-row:1/3}
 .mef-d dl{margin-top:.9rem}
 .mef-d dl div{padding-block:.9rem;border-top:1px solid var(--deep-rule)}
 .mef-d dt{font-family:var(--serif);font-size:2.4rem;line-height:1}
@@ -157,7 +164,7 @@ a:hover{color:var(--copper)}
 .foot{padding-block:2rem 2.5rem;font-size:.8rem;color:var(--ink-2)}
 
 @media (max-width:980px){
-  .hero-text{grid-column:1/8}.hero-img{grid-column:8/13}
+  .hero-text{grid-column:1/-1}
   .cards{grid-template-columns:1fr}
   .cards li,.cards li:nth-child(even){padding:1.5rem 0 1.75rem;border-left:0}
   .lrow,.l3{grid-template-columns:1fr 1fr;row-gap:1.25rem}
@@ -173,7 +180,7 @@ a:hover{color:var(--copper)}
   .hero-text,.hero-img{grid-column:1/-1}
   .hero-img{order:-1}
   .hero-img img{width:100%;margin:0}
-  .mef-t,.mef-d{grid-column:1/-1}
+  .mef-t,.mef-d,.mef-fig{grid-column:1/-1;grid-row:auto}
   .b601{grid-column:1/9}.yah{grid-column:9/13;padding-bottom:0}
   .ip,.cap-a,.cap-b{grid-column:1/-1}
   .ip{margin-top:2rem}
@@ -221,9 +228,6 @@ a:hover{color:var(--copper)}
       </ul>
       <p class="cta"><!--email_off--><a href="mailto:stavand@ieee.org">Email me</a><!--email_on--><a href="https://scholar.google.com/citations?user=tO8oU9yp5JkC" rel="noopener">Google Scholar</a><a href="https://github.com/stavanio" rel="noopener">GitHub</a></p>
     </div>
-    <figure class="hero-img">
-      <img src="/assets/mefferdi-vehicle.webp" alt="Mefferdi subsea vehicle with twin hulls, thrusters, lights, and camera housings" width="1355" height="1087" decoding="async" fetchpriority="high">
-    </figure>
   </div>
 </section>
 </div>
@@ -277,9 +281,9 @@ a:hover{color:var(--copper)}
         <p class="lk"><a href="https://github.com/stavanio/lwsd-bench" rel="noopener">Code</a></p>
       </li>
       <li>
-        <p class="st">Under review, Science Robotics</p>
+        <p class="st">Working paper</p>
         <h3>OVAC</h3>
-        <p class="what">On-device open-vocabulary detection against offboard foundation models, fusing aerial and ground-robot views on Jetson-class compute.</p>
+        <p class="what">Open-vocabulary detection and aerial-ground coordination, evaluated for search-and-rescue scenarios.</p>
         <p class="why"><span class="label">Why it matters</span>Lets a drone and a ground robot look for things they were never trained on, using models small enough to run onboard.</p>
         <p class="lk"><a href="https://github.com/stavanio/ovac" rel="noopener">Code</a></p>
       </li>
@@ -415,6 +419,26 @@ a:hover{color:var(--copper)}
         </dl>
         <p class="status">Vehicles and subsystems are built and in testing. Autonomy is in development.</p>
       </div>
+      <figure class="mef-fig">
+        <svg class="rov" viewBox="0 0 560 320" role="img" aria-label="Line drawing of the Mefferdi subsea vehicle: twin hull, pressure housing, thrusters, lights and camera, inspecting a pipe on the seabed">
+          <path class="w" d="M0 24c20-6 40 6 60 0s40 6 60 0 40 6 60 0 40 6 60 0 40 6 60 0 40 6 60 0 40 6 60 0 40 6 60 0 40 6 60 0"/>
+          <path class="w" d="M0 296H560"/>
+          <path class="t" d="M112 112C70 104 58 70 40 48S22 30 20 24"/>
+          <g class="cone"><path d="M472 181L498 268H560V250Z"/></g>
+          <g class="k">
+            <path d="M80 160L104 136H404L428 160V206L404 230H104L80 206Z"/><path d="M104 136V230M404 136V230M80 183H428"/>
+            <rect x="120" y="98" width="280" height="38"/><path d="M190 98V136M260 98V136M330 98V136"/>
+            <rect x="112" y="92" width="10" height="50"/><rect x="400" y="88" width="24" height="58"/>
+            <path d="M140 98V70Q140 62 148 62H186Q194 62 194 70V98"/><path d="M362 98V64Q362 56 370 56H402Q410 56 410 64V88"/>
+            <rect x="428" y="166" width="38" height="28"/><rect x="466" y="162" width="6" height="36"/>
+            <rect x="428" y="144" width="24" height="12"/><rect x="428" y="206" width="24" height="12"/>
+            <rect x="38" y="168" width="38" height="30"/><path d="M38 183H26M76 183H80"/>
+            <rect x="148" y="230" width="48" height="18"/><rect x="304" y="230" width="48" height="18"/><path d="M172 248V256M328 248V256"/>
+            <rect x="472" y="270" width="88" height="20"/>
+          </g>
+          <g class="cu"><circle cx="456" cy="150" r="3"/><circle cx="456" cy="212" r="3"/><rect x="514" y="270" width="12" height="20"/></g>
+        </svg>
+      </figure>
     </div>
   </div>
 </section>
@@ -428,7 +452,7 @@ a:hover{color:var(--copper)}
       <figure class="yah"><img src="/assets/yahboom-rover.webp" alt="Yahboom mecanum-wheel rover seen from above" width="406" height="482" loading="lazy" decoding="async"></figure>
       <div class="ip">
         <div><p class="label">Edge compute</p><p class="t">Jetson Orin nodes running ROS 2 for perception and latency experiments.</p></div>
-        <div><p class="label">Patents</p><p class="t">3 granted U.S. patents and 6 more filed, in robotics, machine vision, and sensor fusion.</p></div>
+        <div><p class="label">Patents</p><p class="t">3 granted, more pending, in machine vision, sensor fusion, and robotics.</p></div>
       </div>
     </div>
     <div class="grid caps">
@@ -444,8 +468,6 @@ a:hover{color:var(--copper)}
     <ul>
       <li>CES Innovation Awards judge, Advanced Mobility and Robotics</li>
       <li>UW CoMotion Innovation Gap Fund judge</li>
-      <li>Winner, Microsoft Hackathon Executive Challenge (wildfire-sensing robot)</li>
-      <li>Amazon Door Desk Award</li>
       <li>Purdue advisory work</li>
       <li>IEEE Indiana Section Vice Chair, through 2015</li>
       <li>FAA Part 107 remote pilot</li>
