@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow,noimageindex">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="theme-color" content="#F3EFE7">
+<meta name="theme-color" content="#14241D">
 <title>Stavan Dholakia</title>
 <link rel="canonical" href="https://stavan.io/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231C2922'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' text-anchor='middle' fill='%23F3EFE7'%3ES%3C/text%3E%3C/svg%3E">
@@ -20,7 +20,7 @@
   --wrap:1180px;--gutter:clamp(20px,5vw,56px);
 }
 *,*::before,*::after{box-sizing:border-box}
-html{color-scheme:light;-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
+html{color-scheme:light dark;-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--sans);-webkit-font-smoothing:antialiased}
 img,svg{display:block;max-width:100%}
 h1,h2,h3{margin:0;font-family:var(--serif);font-weight:400;letter-spacing:-.015em}
@@ -210,6 +210,12 @@ a:hover{color:var(--copper)}
   .papers li,.papers li:nth-child(even){padding-left:0;border-left:0}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+[stroke="#1C2922"]{stroke:var(--ink)}
+[stroke="#A2502A"]{stroke:var(--copper)}
+[fill="#A2502A"]{fill:var(--copper)}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#0F1813;--paper-2:#131F19;--ink:#ECE7DD;--ink-2:#AEB8B0;--rule:#2A3A31;--copper:#D9875C;--deep:#1A2B23;--deep-2:#213329;--deep-rule:#3A5044}
+}
 </style>
 </head>
 <body>
