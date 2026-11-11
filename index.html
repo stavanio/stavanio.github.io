@@ -58,8 +58,6 @@ a:hover{color:var(--copper)}
 .cta a:first-child{padding:.7rem 1.1rem;background:var(--on-deep);color:var(--deep);text-decoration:none}
 .cta a:first-child:hover{background:var(--copper-l);color:var(--deep)}
 .cta a:last-child{align-self:center}
-.pills{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
-.pills li{padding:.4rem .7rem;border:1px solid var(--deep-rule);font:500 .7rem/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--on-deep)}
 .cta a+a{align-self:center}
 .papers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:clamp(2rem,5vw,3rem);border-top:2px solid var(--ink)}
 .papers li{display:flex;flex-direction:column;padding:1.6rem 1.5rem 1.8rem 0;border-bottom:1px solid var(--rule)}
@@ -100,18 +98,13 @@ a:hover{color:var(--copper)}
 .mef-d dt{font-family:var(--serif);font-size:2.4rem;line-height:1}
 .mef-d dd{margin-top:.4rem;font-size:.88rem;color:var(--on-deep-2)}
 .status{padding-top:.9rem;border-top:1px solid var(--deep-rule);font-size:.88rem;color:var(--on-deep-2)}
-
-.fit{background:var(--paper-2);border-block:1px solid var(--rule)}
-.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:clamp(2rem,5vw,3rem);border-top:2px solid var(--ink)}
-.cards li{display:grid;grid-template-columns:3.25rem 1fr;column-gap:1.25rem;padding:1.75rem 2rem 2rem 0;border-bottom:1px solid var(--rule)}
-.cards li:nth-child(even){padding-left:2rem;padding-right:0;border-left:1px solid var(--rule)}
 .gl{width:3.25rem;height:3.25rem;color:var(--ink)}
-.cards .big{margin:0;color:var(--ink);font-family:var(--serif);font-size:clamp(2rem,3.6vw,2.8rem);line-height:1;letter-spacing:-.02em}
-.cards h3{margin-top:.6rem;font:600 .95rem/1.3 var(--sans);letter-spacing:0}
-.cards p{margin-top:.45rem;font-size:.95rem;line-height:1.5;color:var(--ink-2);max-width:30em}
 
 .pull{position:relative;max-width:16em;font-style:italic}
 .pull::before{content:"\201C";position:absolute;left:-.48em;top:-.05em;color:var(--copper)}
+.scale{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem 2rem;margin-top:clamp(2rem,5vw,3rem)}
+.scale dt{font-family:var(--serif);font-size:clamp(2rem,3.6vw,2.8rem);line-height:1;letter-spacing:-.02em}
+.scale dd{margin-top:.5rem;font-size:.93rem;line-height:1.45;color:var(--ink-2);max-width:22em}
 .ledger{margin-top:clamp(2.5rem,5vw,3.5rem);border-top:2px solid var(--ink)}
 .lrow{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr) minmax(0,1.6fr);column-gap:2rem;padding-block:1.75rem 2rem;border-bottom:1px solid var(--rule)}
 .l3{grid-template-columns:minmax(0,.8fr) repeat(3,minmax(0,1.07fr))}
@@ -159,8 +152,6 @@ a:hover{color:var(--copper)}
 
 @media (max-width:980px){
   .hero-text{grid-column:1/-1}
-  .cards{grid-template-columns:1fr}
-  .cards li,.cards li:nth-child(even){padding:1.5rem 0 1.75rem;border-left:0}
   .lrow,.l3{grid-template-columns:1fr 1fr;row-gap:1.25rem}
   .lh{grid-column:1/-1}
 }
@@ -178,6 +169,7 @@ a:hover{color:var(--copper)}
   .ip,.cap-a,.cap-b,.cap-c{grid-column:1/-1}
   .ip{margin-top:2rem}
   .pull::before{position:static}
+  .scale{grid-template-columns:1fr}
   .lrow,.l3{grid-template-columns:1fr}
   .ledger svg{max-width:440px}
   .also ul{flex-direction:column}
@@ -208,29 +200,110 @@ a:hover{color:var(--copper)}
       <h1 id="name">Stavan Dholakia</h1>
       <p class="role">Co-founder and Technical Lead, Mefferdi <span>&middot; Seattle, Washington</span></p>
       <p class="thesis">Building safe, autonomous physical AI and perception systems for extreme environments, from cloud-scale compute to GPS-denied robots.</p>
-      <ul class="pills">
-        <li>Amazon Go, founding team</li>
-        <li>Amazon Robotics</li>
-        <li>Cloud silicon and AI infrastructure</li>
-      </ul>
-      <p class="cta"><!--email_off--><a href="mailto:stavand@ieee.org">Email me</a><!--email_on--><a href="https://scholar.google.com/citations?user=tO8oU9yp5JkC" rel="noopener">Google Scholar</a><a href="https://github.com/stavanio" rel="noopener">GitHub</a></p>
+      <p class="cta"><!--email_off--><a href="mailto:stavand@ieee.org">Email me</a><!--email_on--></p>
     </div>
   </div>
 </section>
 </div>
 
-<section class="sec fit" aria-labelledby="fit-h">
+<section class="sec" aria-labelledby="tr-h">
   <div class="wrap">
-    <p class="kicker">01 / Proof</p>
-    <h2 id="fit-h">What I have delivered</h2>
-    <ul class="cards">
-      <li><svg class="gl" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6l14 6v10c0 9-6 16-14 20-8-4-14-11-14-20V12z"/><path d="M18 24l4 4 8-9" stroke="#A2502A"/></g></svg><div><p class="big">175K+ robots</p><h3>Human-robot safety at fleet scale</h3><p>Owned IEC 61508 functional safety for Amazon&rsquo;s robot fleet working alongside associates: hazard analysis, SIL allocation, fail-safe behaviors. Built the safety-vest program to 99.97% human detection across 20 sites.</p></div></li>
-      <li><svg class="gl" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="24" r="5"/><path d="M15 21l25-11M15 27l25 11"/><circle cx="32" cy="20" r="1.2" stroke="#A2502A"/><circle cx="36" cy="27" r="1.2" stroke="#A2502A"/><circle cx="29" cy="30" r="1.2" stroke="#A2502A"/></g></svg><div><p class="big">Founding team</p><h3>Just Walk Out perception</h3><p>Founding member of the team that built the computer-vision sensor platform behind Amazon Go. Took the flagship grocery format from greenfield to launch in 10 months, drove pick-tracking sensor fusion to 99.2%, and ran an 8 TB/day training-data pipeline.</p></div></li>
-      <li><svg class="gl" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 40h16M16 40V30l10-12 12 4"/><circle cx="16" cy="30" r="2.5"/><circle cx="26" cy="18" r="2.5"/><path d="M38 22l4-4M38 22l4 4" stroke="#A2502A"/></g></svg><div><p class="big">5 to 43 sites</p><h3>Robots into production</h3><p>Took Amazon&rsquo;s packing cells and multi-robot fleet from 5 pilots to 43 sites across North America and Europe. Brought a 6-DoF tote-handling arm from concept to production: +38% throughput, zero drops, 99.82% uptime.</p></div></li>
-      <li><svg class="gl" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="13" y="13" width="22" height="22"/><rect x="19" y="19" width="10" height="10" stroke="#A2502A"/><path d="M18 13V7M24 13V7M30 13V7M18 41v-6M24 41v-6M30 41v-6M13 18H7M13 24H7M13 30H7M41 18h-6M41 24h-6M41 30h-6"/></g></svg><div><p class="big">1.3M+ vCPUs</p><h3>First-party cloud silicon</h3><p>Shipped Cobalt 100 across 30+ teams. Now leading Cobalt 200, alongside GB200 and GB300-class GPU infrastructure.</p></div></li>
-      <li><svg class="gl" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 40V28M18 40V20M28 40V14M38 40V8" /><path d="M6 42h36" stroke="#A2502A"/></g></svg><div><p class="big">Multi-$B</p><h3>Operating scale</h3><p>Programs I led or materially shaped across cloud, AI capacity, and automation. One Azure program alone runs at ~$450M ARR. Execution across 40+ teams and ~200 people in North America, EMEA, and APAC.</p></div></li>
-      <li><svg class="gl" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 32V20h14v-6h10l6 8h6v10"/><circle cx="14" cy="34" r="4"/><circle cx="34" cy="34" r="4"/><rect x="22" y="20" width="6" height="5" stroke="#A2502A"/></g></svg><div><p class="big">15 years</p><h3>Hardware first</h3><p>Systems that have to survive the physical world: trucks, warehouses, stores, datacenters, and now the ocean.</p></div></li>
-    </ul>
+    <p class="kicker">01 / Track record</p>
+    <h2 id="tr-h" class="pull">Pilots are cheap. Site twelve is where you learn what you actually built.</h2>
+    <dl class="scale">
+      <div><dt>Multi-$B</dt><dd>Infrastructure and commerce impact of programs I led or materially shaped</dd></div>
+      <div><dt>~$450M ARR</dt><dd>One Azure program in my portfolio</dd></div>
+      <div><dt>40+ teams</dt><dd>~200 people across North America, EMEA, and APAC</dd></div>
+    </dl>
+    <div class="ledger">
+      <div class="lrow">
+        <h3 class="lh">Microsoft<span>2022 to now</span></h3>
+        <figure>
+          <svg viewBox="0 0 360 220" role="img" aria-label="Server racks with one GPU rack highlighted, linked to an Arm server chip">
+          <defs><pattern id="rk" width="44" height="14" patternUnits="userSpaceOnUse"><path d="M8 7h28" stroke="#1C2922" stroke-width="1"/></pattern>
+          <g id="rack2"><rect width="44" height="150" fill="url(#rk)"/><rect width="44" height="150" fill="none" stroke="#1C2922" stroke-width="1.5"/></g></defs>
+          <path class="hair" d="M10 192H350"/>
+          <use href="#rack2" x="30" y="42"/><use href="#rack2" x="82" y="42"/><use href="#rack2" x="134" y="42"/><use href="#rack2" x="186" y="42"/>
+          <rect x="134" y="42" width="44" height="150" fill="none" stroke="#A2502A" stroke-width="2"/>
+          <path d="M230 117H262" fill="none" stroke="#A2502A" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <g class="s"><rect x="262" y="82" width="70" height="70"/><path d="M276 82v-10M290 82v-10M304 82v-10M318 82v-10M276 152v10M290 152v10M304 152v10M318 152v10M262 96h-10M262 110h-10M262 124h-10M262 138h-10M332 96h10M332 110h10M332 124h10M332 138h10"/></g>
+          <rect class="cu" x="283" y="103" width="28" height="28"/>
+        </svg>
+          <figcaption><span class="label">AI infrastructure</span>Shipped Cobalt 100, Microsoft&rsquo;s first in-house Arm server CPU, now in 32 Azure regions. Leading Cobalt 200 across a 1.3M+ vCPU platform, plus GB200 and GB300-class GPU capacity.</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 360 220" role="img" aria-label="Mobile manipulator with a camera on a mast, reaching for an item on a table">
+          <path class="hair" d="M10 192H350"/>
+          <g class="cone"><path d="M142 90L300 110L292 140Z"/></g>
+          <g class="s"><rect x="100" y="148" width="140" height="28"/>
+          <path d="M130 148V98"/><rect x="118" y="82" width="24" height="16"/>
+          <path d="M205 148L195 104L250 84L278 106M272 110h14M274 110v8M284 110v8"/>
+          <path d="M268 132H342M276 132V192M334 132V192"/></g>
+          <g class="s bg"><circle cx="128" cy="180" r="12"/><circle cx="212" cy="180" r="12"/><circle cx="205" cy="148" r="4"/><circle cx="195" cy="104" r="4"/><circle cx="250" cy="84" r="4"/></g>
+          <rect class="cu" x="282" y="118" width="16" height="14"/>
+        </svg>
+          <figcaption><span class="label">Robotics</span>Robotics expertise for early-stage robotics work.</figcaption>
+        </figure>
+      </div>
+      <div class="lrow l3">
+        <h3 class="lh">Amazon<span>2015 to 2022</span></h3>
+        <figure>
+          <svg viewBox="0 0 360 220" role="img" aria-label="Mobile drive units carrying shelf pods, stopping at a safety zone around a person wearing a sensing vest">
+          <path class="hair" d="M10 192H350"/>
+          <path d="M215 192A62 62 0 0 1 339 192M240 192A37 37 0 0 1 314 192" fill="none" stroke="#A2502A" stroke-width="1.5" stroke-dasharray="4 5"/>
+          <g class="s"><rect x="30" y="92" width="74" height="80"/><path d="M30 118H104M30 145H104"/><rect x="36" y="172" width="62" height="14"/>
+          <rect x="128" y="172" width="62" height="14"/><path d="M200 120V186" stroke-dasharray="3 4"/>
+          <circle cx="277" cy="118" r="9"/><path d="M277 127V164M277 164L266 192M277 164L288 192M277 136L262 152M277 136L292 152"/></g>
+          <rect class="cu" x="270" y="132" width="14" height="22"/>
+        </svg>
+          <figcaption><span class="label">Robotics &middot; safety</span>Owned IEC 61508 functional safety for a 175K+ robot fleet working alongside people. Safety vest program: 99.97% human detection across 20 sites.</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 360 220" role="img" aria-label="Checkout-free store: ceiling cameras with overlapping sensor fields over shelves, one item tracked">
+          <path class="hair" d="M10 22H350M10 192H350"/>
+          <g class="cone"><path d="M78 30L28 192H128Z"/><path d="M180 30L130 192H230Z"/><path d="M282 30L232 192H332Z"/></g>
+          <g class="s"><rect x="70" y="22" width="16" height="9"/><rect x="172" y="22" width="16" height="9"/><rect x="274" y="22" width="16" height="9"/>
+          <rect x="40" y="110" width="110" height="82"/><path d="M40 137H150M40 164H150"/>
+          <rect x="210" y="110" width="110" height="82"/><path d="M210 137H320M210 164H320"/>
+          <path d="M50 137v-14h10v14M66 137v-10h12v10M118 137v-16h10v16M54 164v-12h14v12M100 164v-14h10v14M128 164v-10h12v10M220 137v-12h12v12M262 137v-16h10v16M290 137v-10h14v10M228 164v-14h10v14M276 164v-12h16v12"/></g>
+          <rect class="cu" x="84" y="121" width="12" height="16"/>
+          <circle cx="90" cy="129" r="15" fill="none" stroke="#A2502A" stroke-width="1.5"/>
+          <path d="M90 108v8M90 142v8M69 129h8M103 129h8" stroke="#A2502A" stroke-width="1.5"/>
+        </svg>
+          <figcaption><span class="label">Go &middot; Just Walk Out</span>Founding member of the vision sensor platform team. Flagship grocery store launched in 10 months; pick-tracking sensor fusion at 99.2%.</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 360 220" role="img" aria-label="Pack cell: a six-axis arm placing an item into a box on a conveyor, inside a dashed safety envelope">
+          <path class="hair" d="M10 192H350"/>
+          <path d="M175 192A85 85 0 0 1 345 192" fill="none" stroke="#A2502A" stroke-width="1.5" stroke-dasharray="4 5"/>
+          <g class="s"><rect x="20" y="150" width="200" height="8"/><path d="M32 158V192M208 158V192"/>
+          <rect x="40" y="136" width="18" height="14"/><rect x="82" y="134" width="22" height="16"/>
+          <path d="M140 150V128H182V150M140 128l-10-8M182 128l10-8"/>
+          <rect x="240" y="172" width="40" height="20"/>
+          <path d="M260 172L250 108L198 92L184 112M178 112h14M180 112v8M190 112v8"/></g>
+          <g class="s bg"><circle cx="260" cy="172" r="4"/><circle cx="250" cy="108" r="4"/><circle cx="198" cy="92" r="4"/></g>
+          <rect class="cu" x="176" y="120" width="16" height="12"/>
+        </svg>
+          <figcaption><span class="label">Robotics &middot; packing</span>Packing cells and robot fleet from 5 pilots to 43 sites. 6-DoF tote-handling arm from concept to production: +38% throughput, 99.82% uptime.</figcaption>
+        </figure>
+      </div>
+      <div class="lrow">
+        <h3 class="lh">Cummins<span>2011 to 2015</span></h3>
+        <figure>
+          <svg viewBox="0 0 360 220" role="img" aria-label="Class 8 conventional truck with the engine and vehicle controller highlighted">
+          <path class="hair" d="M10 192H350"/>
+          <g class="s"><path d="M40 166H312M60 166V158H90"/>
+          <path d="M110 166V82H170V166"/><path d="M170 166V96H212L218 120H292Q304 122 304 134V166"/>
+          <path d="M178 104H206L211 120H178Z"/><path d="M166 82V54"/><path d="M304 134V166"/></g>
+          <rect x="226" y="128" width="58" height="30" fill="none" stroke="#A2502A" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <rect class="cu" x="184" y="140" width="12" height="10"/>
+          <g class="s bg"><circle cx="78" cy="174" r="18"/><circle cx="122" cy="174" r="18"/><circle cx="276" cy="174" r="18"/></g>
+          <g class="s"><circle cx="78" cy="174" r="5"/><circle cx="122" cy="174" r="5"/><circle cx="276" cy="174" r="5"/></g>
+        </svg>
+          <figcaption><span class="label">Commercial vehicles</span>Electronic control systems for on-highway diesel platforms: Kenworth and Peterbilt trucks on ISX and ISB powertrains, through global OEM launches.</figcaption>
+        </figure>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -283,111 +356,15 @@ a:hover{color:var(--copper)}
   </div>
 </section>
 
-<section class="sec" aria-labelledby="tr-h">
-  <div class="wrap">
-    <p class="kicker">03 / Track record</p>
-    <h2 id="tr-h" class="pull">Pilots are cheap. Site twelve is where you learn what you actually built.</h2>
-    <div class="ledger">
-      <div class="lrow">
-        <h3 class="lh">Microsoft<span>2022 to now</span></h3>
-        <figure>
-          <svg viewBox="0 0 360 220" role="img" aria-label="Server racks with one GPU rack highlighted, linked to an Arm server chip">
-          <defs><pattern id="rk" width="44" height="14" patternUnits="userSpaceOnUse"><path d="M8 7h28" stroke="#1C2922" stroke-width="1"/></pattern>
-          <g id="rack2"><rect width="44" height="150" fill="url(#rk)"/><rect width="44" height="150" fill="none" stroke="#1C2922" stroke-width="1.5"/></g></defs>
-          <path class="hair" d="M10 192H350"/>
-          <use href="#rack2" x="30" y="42"/><use href="#rack2" x="82" y="42"/><use href="#rack2" x="134" y="42"/><use href="#rack2" x="186" y="42"/>
-          <rect x="134" y="42" width="44" height="150" fill="none" stroke="#A2502A" stroke-width="2"/>
-          <path d="M230 117H262" fill="none" stroke="#A2502A" stroke-width="1.5" stroke-dasharray="4 4"/>
-          <g class="s"><rect x="262" y="82" width="70" height="70"/><path d="M276 82v-10M290 82v-10M304 82v-10M318 82v-10M276 152v10M290 152v10M304 152v10M318 152v10M262 96h-10M262 110h-10M262 124h-10M262 138h-10M332 96h10M332 110h10M332 124h10M332 138h10"/></g>
-          <rect class="cu" x="283" y="103" width="28" height="28"/>
-        </svg>
-          <figcaption><span class="label">AI infrastructure</span>Cobalt 100 is Microsoft&rsquo;s first in-house Arm server CPU: 128 cores, generally available since October 2024 and now in 32 Azure regions. Cobalt 200 followed in November 2025 with 132 cores on a 3 nm process.</figcaption>
-        </figure>
-        <figure>
-          <svg viewBox="0 0 360 220" role="img" aria-label="Mobile manipulator with a camera on a mast, reaching for an item on a table">
-          <path class="hair" d="M10 192H350"/>
-          <g class="cone"><path d="M142 90L300 110L292 140Z"/></g>
-          <g class="s"><rect x="100" y="148" width="140" height="28"/>
-          <path d="M130 148V98"/><rect x="118" y="82" width="24" height="16"/>
-          <path d="M205 148L195 104L250 84L278 106M272 110h14M274 110v8M284 110v8"/>
-          <path d="M268 132H342M276 132V192M334 132V192"/></g>
-          <g class="s bg"><circle cx="128" cy="180" r="12"/><circle cx="212" cy="180" r="12"/><circle cx="205" cy="148" r="4"/><circle cx="195" cy="104" r="4"/><circle cx="250" cy="84" r="4"/></g>
-          <rect class="cu" x="282" y="118" width="16" height="14"/>
-        </svg>
-          <figcaption><span class="label">Robotics</span>Robotics expertise for early-stage robotics work.</figcaption>
-        </figure>
-      </div>
-      <div class="lrow l3">
-        <h3 class="lh">Amazon<span>2015 to 2022</span></h3>
-        <figure>
-          <svg viewBox="0 0 360 220" role="img" aria-label="Mobile drive units carrying shelf pods, stopping at a safety zone around a person wearing a sensing vest">
-          <path class="hair" d="M10 192H350"/>
-          <path d="M215 192A62 62 0 0 1 339 192M240 192A37 37 0 0 1 314 192" fill="none" stroke="#A2502A" stroke-width="1.5" stroke-dasharray="4 5"/>
-          <g class="s"><rect x="30" y="92" width="74" height="80"/><path d="M30 118H104M30 145H104"/><rect x="36" y="172" width="62" height="14"/>
-          <rect x="128" y="172" width="62" height="14"/><path d="M200 120V186" stroke-dasharray="3 4"/>
-          <circle cx="277" cy="118" r="9"/><path d="M277 127V164M277 164L266 192M277 164L288 192M277 136L262 152M277 136L292 152"/></g>
-          <rect class="cu" x="270" y="132" width="14" height="22"/>
-        </svg>
-          <figcaption><span class="label">Robotics &middot; safety</span>Drive units that lift storage pods and carry them to associates, on floors shared with people. The fleet passed 200,000 robots by 2019.</figcaption>
-        </figure>
-        <figure>
-          <svg viewBox="0 0 360 220" role="img" aria-label="Checkout-free store: ceiling cameras with overlapping sensor fields over shelves, one item tracked">
-          <path class="hair" d="M10 22H350M10 192H350"/>
-          <g class="cone"><path d="M78 30L28 192H128Z"/><path d="M180 30L130 192H230Z"/><path d="M282 30L232 192H332Z"/></g>
-          <g class="s"><rect x="70" y="22" width="16" height="9"/><rect x="172" y="22" width="16" height="9"/><rect x="274" y="22" width="16" height="9"/>
-          <rect x="40" y="110" width="110" height="82"/><path d="M40 137H150M40 164H150"/>
-          <rect x="210" y="110" width="110" height="82"/><path d="M210 137H320M210 164H320"/>
-          <path d="M50 137v-14h10v14M66 137v-10h12v10M118 137v-16h10v16M54 164v-12h14v12M100 164v-14h10v14M128 164v-10h12v10M220 137v-12h12v12M262 137v-16h10v16M290 137v-10h14v10M228 164v-14h10v14M276 164v-12h16v12"/></g>
-          <rect class="cu" x="84" y="121" width="12" height="16"/>
-          <circle cx="90" cy="129" r="15" fill="none" stroke="#A2502A" stroke-width="1.5"/>
-          <path d="M90 108v8M90 142v8M69 129h8M103 129h8" stroke="#A2502A" stroke-width="1.5"/>
-        </svg>
-          <figcaption><span class="label">Go &middot; Just Walk Out</span>Overhead cameras and shelf weight sensors fused by computer vision. The 10,400 sq ft Go Grocery flagship opened on Capitol Hill in February 2020 with about 5,000 products.</figcaption>
-        </figure>
-        <figure>
-          <svg viewBox="0 0 360 220" role="img" aria-label="Pack cell: a six-axis arm placing an item into a box on a conveyor, inside a dashed safety envelope">
-          <path class="hair" d="M10 192H350"/>
-          <path d="M175 192A85 85 0 0 1 345 192" fill="none" stroke="#A2502A" stroke-width="1.5" stroke-dasharray="4 5"/>
-          <g class="s"><rect x="20" y="150" width="200" height="8"/><path d="M32 158V192M208 158V192"/>
-          <rect x="40" y="136" width="18" height="14"/><rect x="82" y="134" width="22" height="16"/>
-          <path d="M140 150V128H182V150M140 128l-10-8M182 128l10-8"/>
-          <rect x="240" y="172" width="40" height="20"/>
-          <path d="M260 172L250 108L198 92L184 112M178 112h14M180 112v8M190 112v8"/></g>
-          <g class="s bg"><circle cx="260" cy="172" r="4"/><circle cx="250" cy="108" r="4"/><circle cx="198" cy="92" r="4"/></g>
-          <rect class="cu" x="176" y="120" width="16" height="12"/>
-        </svg>
-          <figcaption><span class="label">Robotics &middot; packing</span>Robotic packing cells and multi-robot fleets in fulfillment centers across North America and Europe.</figcaption>
-        </figure>
-      </div>
-      <div class="lrow">
-        <h3 class="lh">Cummins<span>2011 to 2015</span></h3>
-        <figure>
-          <svg viewBox="0 0 360 220" role="img" aria-label="Class 8 conventional truck with the engine and vehicle controller highlighted">
-          <path class="hair" d="M10 192H350"/>
-          <g class="s"><path d="M40 166H312M60 166V158H90"/>
-          <path d="M110 166V82H170V166"/><path d="M170 166V96H212L218 120H292Q304 122 304 134V166"/>
-          <path d="M178 104H206L211 120H178Z"/><path d="M166 82V54"/><path d="M304 134V166"/></g>
-          <rect x="226" y="128" width="58" height="30" fill="none" stroke="#A2502A" stroke-width="1.5" stroke-dasharray="4 4"/>
-          <rect class="cu" x="184" y="140" width="12" height="10"/>
-          <g class="s bg"><circle cx="78" cy="174" r="18"/><circle cx="122" cy="174" r="18"/><circle cx="276" cy="174" r="18"/></g>
-          <g class="s"><circle cx="78" cy="174" r="5"/><circle cx="122" cy="174" r="5"/><circle cx="276" cy="174" r="5"/></g>
-        </svg>
-          <figcaption><span class="label">Commercial vehicles</span>Electronic control systems for on-highway diesel platforms: Kenworth and Peterbilt trucks on ISX and ISB powertrains, through global OEM launches.</figcaption>
-        </figure>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="sec mef" id="mefferdi" aria-labelledby="co-h">
   <div class="wrap">
-    <p class="kicker">04 / Now</p>
+    <p class="kicker">03 / Now</p>
     <div class="grid mef-g">
       <div class="mef-t">
         <h2 id="co-h">Mefferdi</h2>
         <p class="label since">Founded 2019 &middot; active since 2022</p>
-        <p class="lead">I co-founded Mefferdi and lead its technical work: subsea vehicles with engineered pressure systems, variable buoyancy, and on-board perception for AI-enabled inspection. The team spans four countries.</p>
-        <p class="go"><a href="https://mefferdi.com" rel="noopener">mefferdi.com</a> &nbsp;&middot;&nbsp; <a href="/gallery/">Photos</a></p>
+        <p class="lead">Subsea vehicles with engineered pressure systems, variable buoyancy, and on-board perception for AI-enabled inspection. Built by a team across four countries.</p>
+        <p class="go"><a href="https://mefferdi.com" rel="noopener">mefferdi.com</a></p>
       </div>
       <div class="mef-d">
         <p class="label">Design targets</p>
@@ -423,7 +400,7 @@ a:hover{color:var(--copper)}
 
 <section class="sec bench" aria-labelledby="bench-h">
   <div class="wrap">
-    <p class="kicker">05 / Lab</p>
+    <p class="kicker">04 / Lab</p>
     <h2 id="bench-h">From the lab</h2>
     <div class="grid shelf sk">
       <figure class="b601">
@@ -467,7 +444,7 @@ a:hover{color:var(--copper)}
 
 <section class="also" aria-labelledby="also-h">
   <div class="wrap">
-    <h2 id="also-h" class="kicker">06 / Recognition and service</h2>
+    <h2 id="also-h" class="kicker">05 / Recognition and service</h2>
     <ul>
       <li>CES Innovation Awards judge, Advanced Mobility and Robotics</li>
       <li>UW CoMotion Innovation Gap Fund judge</li>
@@ -479,15 +456,11 @@ a:hover{color:var(--copper)}
 </section>
 
 <section class="wrap contact" id="contact" aria-labelledby="contact-h">
-  <p class="kicker">07 / Contact</p>
+  <p class="kicker">06 / Contact</p>
   <h2 id="contact-h">Advisory, physical AI research collaborations, and stealth inquiries.</h2>
   <!--email_off--><p class="mail"><a href="mailto:stavand@ieee.org">stavand@ieee.org</a></p><!--email_on-->
   <ul>
     <li><a href="tel:+12154100092">+1 215 410 0092</a></li>
-    <li><a href="https://scholar.google.com/citations?user=tO8oU9yp5JkC" rel="noopener">Google Scholar</a></li>
-    <li><a href="https://github.com/stavanio" rel="noopener">GitHub</a></li>
-    <li><a href="https://orcid.org/0009-0003-9795-5611" rel="noopener">ORCID</a></li>
-    <li><a href="https://mefferdi.com" rel="noopener">mefferdi.com</a></li>
     <li>Seattle, Washington</li>
   </ul>
 </section>
