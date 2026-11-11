@@ -118,6 +118,26 @@ a:hover{color:var(--copper)}
 .way .num{font:500 .7rem/1 var(--mono);letter-spacing:.14em;color:var(--copper)}
 .way h3{margin-top:.8rem;font-size:1.5rem;line-height:1.15}
 .way h3+p{margin-top:.6rem;font-size:.93rem;line-height:1.5;color:var(--ink-2)}
+.garage{background:var(--paper-2);border-block:1px solid var(--rule)}
+.garage .intro{max-width:44em;font-family:var(--serif);font-size:clamp(1.15rem,1.9vw,1.4rem);line-height:1.4;color:var(--ink)}
+.rigs{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:clamp(2.5rem,5vw,3.5rem)}
+.rig{padding:1.5rem 1.75rem 1.75rem;background:var(--paper);border-top:3px solid var(--ink)}
+.rig svg{width:100%;height:240px;margin-bottom:1.25rem}
+.rig .s{fill:none;stroke:var(--ink);stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
+.rig .hair{fill:none;stroke:var(--rule);stroke-width:1}
+.rig .bg{fill:var(--paper)}
+.rig .cu{fill:var(--copper)}
+.rig>.label{color:var(--copper)}
+.rig h3{margin-top:.4rem;font-size:clamp(2rem,3.4vw,2.6rem);line-height:1}
+.rig h3+p{margin-top:.8rem;color:var(--ink-2)}
+.rig dl{margin-top:1.25rem;border-top:1px solid var(--ink)}
+.rig dl div{display:grid;grid-template-columns:7.5rem 1fr;align-items:baseline;padding-block:.6rem;border-bottom:1px solid var(--rule)}
+.rig dt{font-family:var(--serif);font-size:1.5rem;line-height:1}
+.rig dd{font-size:.9rem;color:var(--ink-2)}
+.runs{margin-top:1rem;font-size:.9rem}
+.runs .label{margin-right:.75rem;color:var(--copper)}
+.bay{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5rem 2rem;margin-top:2.5rem;padding-top:1.5rem;border-top:2px solid var(--ink)}
+.bay .t{margin-top:.4rem;font-family:var(--serif);font-size:1.15rem;line-height:1.35}
 .ledger{margin-top:clamp(2.5rem,5vw,3.5rem);border-top:2px solid var(--ink)}
 .lrow{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr) minmax(0,1.6fr);column-gap:2rem;padding-block:1.75rem 2rem;border-bottom:1px solid var(--rule)}
 .l3{grid-template-columns:minmax(0,.8fr) repeat(3,minmax(0,1.07fr))}
@@ -132,24 +152,6 @@ a:hover{color:var(--copper)}
 .ledger .bg{fill:var(--paper)}
 .ledger .cone path{fill:var(--copper);fill-opacity:.07;stroke:var(--copper);stroke-width:1;stroke-dasharray:3 4}
 
-.bench{}
-.shelf{align-items:end;margin-top:clamp(2rem,5vw,3rem);padding-bottom:1.25rem;border-bottom:1px solid var(--ink)}
-.shelf svg{width:100%;height:auto}
-.shelf .s{fill:none;stroke:var(--ink);stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
-.shelf .hair{fill:none;stroke:var(--rule);stroke-width:1}
-.shelf .bg{fill:var(--paper)}
-.shelf .cu{fill:var(--copper)}
-.cap-c{grid-column:9/13}
-.b601{grid-column:1/6}
-.yah{grid-column:6/9}
-.ip{grid-column:9/13;align-self:stretch;display:flex;flex-direction:column;justify-content:flex-end;gap:1.5rem}
-.ip>div{padding-left:1.1rem;border-left:2px solid var(--copper)}
-.ip .t{margin-top:.35rem;font-family:var(--serif);font-size:1.15rem;line-height:1.35}
-.ip .meta{margin-top:.35rem;font:500 .68rem/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--copper)}
-.caps{row-gap:1rem;margin-top:1rem;font-size:.9rem;line-height:1.45;color:var(--ink-2)}
-.caps .label{display:block;margin-bottom:.3rem;color:var(--ink)}
-.cap-a{grid-column:1/6}
-.cap-b{grid-column:6/9}
 
 .also{padding-block:2rem;border-block:1px solid var(--rule)}
 .also .kicker{margin-bottom:1rem}
@@ -178,11 +180,11 @@ a:hover{color:var(--copper)}
   .hero-img{order:-1}
   .hero-img img{width:100%;margin:0}
   .mef-t,.mef-d,.mef-fig{grid-column:1/-1;grid-row:auto}
-  .b601{grid-column:1/8}.yah{grid-column:8/13}
-  .ip,.cap-a,.cap-b,.cap-c{grid-column:1/-1}
   .ip{margin-top:2rem}
   .pull::before{position:static}
   .scale{grid-template-columns:1fr 1fr}
+  .rigs{grid-template-columns:1fr}
+  .bay{grid-template-columns:1fr 1fr}
   .way{grid-template-columns:1fr}
   .way li,.way li+li{padding:1.25rem 0;border-left:0}
   .way li+li{border-top:1px solid var(--rule)}
@@ -447,7 +449,7 @@ a:hover{color:var(--copper)}
     </div>
     <ul class="mef-b">
       <li><p class="label">Vehicle</p><p>Vehicle and pressure-system development for deep, long, cold dives.</p></li>
-      <li><p class="label">Buoyancy</p><p>Variable-buoyancy systems for persistent underwater operation.</p></li>
+      <li><p class="label">Endurance</p><p>A proprietary approach to staying on station longer for less energy.</p></li>
       <li><p class="label">Perception</p><p>Edge perception running on the vehicle.</p></li>
       <li><p class="label">Inspection</p><p>AI-enabled inspection at lower cost than crewed operations.</p></li>
     </ul>
@@ -455,13 +457,13 @@ a:hover{color:var(--copper)}
   </div>
 </section>
 
-<section class="sec bench" aria-labelledby="bench-h">
+<section class="sec garage" id="workbench" aria-labelledby="bench-h">
   <div class="wrap">
-    <p class="kicker">05 / Lab</p>
-    <h2 id="bench-h">From the lab</h2>
-    <p class="intro">Ideas get tested on a bench at home before they become papers or products. The hardware below is where the research above actually runs.</p>
-    <div class="grid shelf sk">
-      <figure class="b601">
+    <p class="kicker">05 / Garage</p>
+    <h2 id="bench-h">From the garage</h2>
+    <p class="intro">No lab manager, no procurement queue, no one to hand the hard part to. Just a bench, a power supply, and machines that either work or do not. This is where the research on this page gets its hands dirty, and where I stay honest about how hard robots really are.</p>
+    <div class="rigs">
+      <article class="rig">
         <svg viewBox="0 0 360 260" role="img" aria-label="Line drawing of the B601 robotic arm reaching toward a box, with its CAN bus traced along the joints">
           <path class="hair" d="M10 232H350"/>
           <path d="M228 206V132L262 70L150 84" fill="none" stroke="#A2502A" stroke-width="1.5" stroke-dasharray="4 4"/>
@@ -473,8 +475,17 @@ a:hover{color:var(--copper)}
           <g class="s bg"><circle cx="228" cy="132" r="12"/><circle cx="262" cy="70" r="11"/><circle cx="150" cy="84" r="9"/></g>
           <g class="cu"><circle cx="228" cy="132" r="4"/><circle cx="262" cy="70" r="4"/><circle cx="150" cy="84" r="3"/></g>
         </svg>
-      </figure>
-      <figure class="yah">
+        <p class="label">Rig 01 &middot; Manipulation</p>
+        <h3>B601 arm</h3>
+        <p>A multi-joint arm I integrated motor by motor and drive with my own controller instead of a vendor black box. It is the testbed for contact, force, and what a robot should refuse to do.</p>
+        <dl>
+          <div><dt>200 Hz</dt><dd>Custom joint-level control loop</dd></div>
+          <div><dt>CAN bus</dt><dd>Motor integration, wired and tuned by hand</dd></div>
+          <div><dt>48 V</dt><dd>Actuation bus on bench power</dd></div>
+        </dl>
+        <p class="runs"><span class="label">Runs</span>Diagnostic Manipulation, manipulation safety experiments</p>
+      </article>
+      <article class="rig">
         <svg viewBox="70 12 228 214" role="img" aria-label="Top-down line drawing of the Yahboom mecanum-wheel rover with LiDAR scan rings, following a taped line toward detected objects">
           <path d="M180 18V74" stroke="#A2502A" stroke-width="6" stroke-opacity=".35"/>
           <path d="M120 130A60 60 0 0 1 240 130M80 130A100 100 0 0 1 280 130" fill="none" stroke="#A2502A" stroke-width="1" stroke-dasharray="3 5"/>
@@ -486,17 +497,24 @@ a:hover{color:var(--copper)}
           <g class="s bg"><circle cx="180" cy="130" r="16"/></g>
           <circle cx="180" cy="130" r="6" fill="#A2502A"/>
         </svg>
-      </figure>
-      <div class="ip">
-        <div><p class="label">Edge compute</p><p class="t">Jetson Orin nodes running ROS 2 for perception and latency experiments.</p></div>
-        <div><p class="label">Patents</p><p class="t">3 granted, more pending, in machine vision, sensor fusion, and robotics.</p></div>
-      </div>
+        <p class="label">Rig 02 &middot; Autonomy</p>
+        <h3>Yahboom rover</h3>
+        <p>An omnidirectional rover that maps the house, gets lost on purpose, and shows exactly what happens when perception falls behind the world.</p>
+        <dl>
+          <div><dt>LiDAR</dt><dd>Mapping and localization</dd></div>
+          <div><dt>Mecanum</dt><dd>Omnidirectional drive for tight indoor courses</dd></div>
+          <div><dt>ROS 2</dt><dd>Perception and autonomy stack</dd></div>
+        </dl>
+        <p class="runs"><span class="label">Runs</span>LWSD-Bench latency experiments, perception and autonomy trials</p>
+      </article>
     </div>
-    <div class="grid caps">
-      <p class="cap-a"><span class="label">B601 arm</span>CAN-bus motors, custom joint-level control at 200 Hz. A manipulation and safety testbed.</p>
-      <p class="cap-b"><span class="label">Yahboom rover</span>LiDAR mapping, perception, and autonomy experiments.</p>
-      <p class="cap-c"><a href="/gallery/">See the real hardware in the gallery</a></p>
-    </div>
+    <ul class="bay">
+      <li><p class="label">Edge compute</p><p class="t">Jetson Orin nodes running ROS 2 and on-device inference.</p></li>
+      <li><p class="label">Training</p><p class="t">An RTX 5080 workstation for training, simulation, and benchmark sweeps.</p></li>
+      <li><p class="label">Bench</p><p class="t">60 V, 15 A of bench power, and enough of it to find out what breaks.</p></li>
+      <li><p class="label">Patents</p><p class="t">3 granted, more pending, in machine vision, sensor fusion, and robotics.</p></li>
+    </ul>
+    <p class="more"><a href="/gallery/">See the real hardware in the gallery</a></p>
   </div>
 </section>
 
