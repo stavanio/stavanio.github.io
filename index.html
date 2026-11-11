@@ -503,7 +503,7 @@ a:hover{color:var(--copper)}
           <p class="label">What it took</p>
           <ul><li>Brought every joint online over CAN, one motor at a time, before anything was allowed to move.</li><li>Chased an elbow that dropped with a thud down to the raw CAN traffic: the stock software was cutting torque once a second and letting gravity win.</li><li>Wrote gravity compensation so the arm holds itself up instead of fighting itself.</li></ul>
           <p class="label">What it achieves</p>
-          <ul><li>Soft grasp and lift under my own control code.</li><li>Physical manipulation runs for the TRiX safety work.</li><li>The platform for Diagnostic Manipulation: learning what an object is by how it pushes back.</li></ul>
+          <ul><li>Soft grasp and lift under my own control code.</li><li>A manipulation and safety testbed I understand end to end, from CAN frame to fingertip.</li></ul>
         </div>
       </article>
       <article class="rig">
@@ -530,7 +530,7 @@ a:hover{color:var(--copper)}
           <p class="label">What it took</p>
           <ul><li>Out of the box it skidded, mapped badly, and drove the wrong way. I found four root causes: a mirrored LiDAR scan, an IMU reporting zeros from a firmware mismatch, sensor fusion that never received IMU data, and a navigation config fighting the robot.</li><li>The test course is masking tape at half-meter marks, a tape measure, and a mug slid across the path.</li></ul>
           <p class="label">What it achieves</p>
-          <ul><li>Maps a living room and navigates it on its own, returning to its start point within about an inch.</li><li>Wheel odometry within 0.8% over two meters.</li><li>The LWSD latency experiment: same robot, same path, three delay conditions, showing how stale perception erodes safety.</li></ul>
+          <ul><li>Maps a living room and navigates it on its own, returning to its start point within about an inch.</li><li>Wheel odometry within 0.8% over two meters.</li><li>Runs the same path under controlled perception delays, showing how stale data erodes safety.</li></ul>
           <p class="lk"><a href="https://github.com/stavanio/yahboomlidarslamsetup" rel="noopener">Setup and fixes, open source</a></p>
         </div>
       </article>
