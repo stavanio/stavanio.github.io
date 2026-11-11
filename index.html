@@ -362,67 +362,9 @@ a:hover{color:var(--copper)}
   </div>
 </section>
 
-<section class="sec res" id="research" aria-labelledby="res-h">
-  <div class="wrap">
-    <p class="kicker">03 / Research</p>
-    <h2 id="res-h">Physical AI research, built on real hardware</h2>
-    <p class="intro">Alongside the industry work, I run an independent research program on one question: what makes a robot safe to deploy? It starts with perception, because most failures begin with a machine that is confidently wrong about the world, and it is moving toward manipulation. Six projects, open code, and real hardware in the loop.</p>
-    <ul class="papers">
-      <li>
-        <p class="st">ICRA 2026 workshop, spotlight</p>
-        <h3>Perception Debt</h3>
-        <p class="what">A formal model of how small, individually tolerable perception errors accumulate and compound until a robot crosses a safety threshold.</p>
-        <p class="how"><span class="label">How</span>Defines a debt-to-margin ratio and a time-to-default estimate that a running robot can track.</p>
-        <p class="why"><span class="label">Why it matters</span>Turns &ldquo;the camera is a bit off&rdquo; into a measurable safety budget, with an estimate of how long a robot has before it fails.</p>
-        <p class="lk"><a href="https://github.com/stavanio/perception-debt" rel="noopener">Code</a></p>
-      </li>
-      <li>
-        <p class="st">Under review, IEEE T-RO</p>
-        <h3>SESR-Bench</h3>
-        <p class="what">Clearance-aware evaluation of visual-inertial odometry.</p>
-        <p class="how"><span class="label">How</span>7 estimators including ORB-SLAM3, BASALT, and OpenVINS; 6 sequences; 210 trajectories scored as error divided by clearance.</p>
-        <p class="why"><span class="label">Why it matters</span>Five centimeters of drift is fine in a warehouse aisle and fatal in a 12 cm gap. This scores localization against the free space a robot actually has.</p>
-        <p class="lk"><a href="https://github.com/stavanio/sesr" rel="noopener">Code</a></p>
-      </li>
-      <li>
-        <p class="st">Under review, Communications Engineering</p>
-        <h3>TRiX</h3>
-        <p class="what">A neuro-symbolic runtime safety layer that checks policy- and VLM-generated robot commands against physics-derived limits before execution.</p>
-        <p class="how"><span class="label">How</span>Allow, project, or reject each command; evaluated on a benchmark of six contact-rich disassembly tasks.</p>
-        <p class="why"><span class="label">Why it matters</span>A general-purpose AI model can propose a plausible action with no idea whether it will strip a thread or crack a board. TRiX sits between the model and the motors.</p>
-        <p class="lk"><a href="https://github.com/stavanio/trix-disasm-suite" rel="noopener">Code</a></p>
-      </li>
-      <li>
-        <p class="st">Working paper</p>
-        <h3>LWSD-Bench</h3>
-        <p class="what">A single diagnostic for how fast a robot&rsquo;s world model goes stale as perception latency grows.</p>
-        <p class="how"><span class="label">How</span>Runs as a ROS 2 node beside the robot stack; latency-injection experiments on a live rover.</p>
-        <p class="why"><span class="label">Why it matters</span>Shows why a bigger, slower model can make a robot less safe, not more.</p>
-        <p class="lk"><a href="https://github.com/stavanio/lwsd-bench" rel="noopener">Code</a></p>
-      </li>
-      <li>
-        <p class="st">Working paper</p>
-        <h3>OVAC</h3>
-        <p class="what">Open-vocabulary detection and aerial-ground coordination for search-and-rescue scenarios.</p>
-        <p class="how"><span class="label">How</span>Evaluated on aerial datasets with reproducible trial scripts and a threshold sweep.</p>
-        <p class="why"><span class="label">Why it matters</span>Lets a drone and a ground robot look for things they were never trained on, using models small enough to run onboard.</p>
-        <p class="lk"><a href="https://github.com/stavanio/ovac" rel="noopener">Code</a></p>
-      </li>
-      <li>
-        <p class="st">In progress</p>
-        <h3>Diagnostic Manipulation</h3>
-        <p class="what">Force-based probing that lets an arm learn what an object is by touching it, not just looking at it.</p>
-        <p class="how"><span class="label">How</span>Running on the B601 arm in the lab.</p>
-        <p class="why"><span class="label">Why it matters</span>Robots that handle unknown objects need to feel stiffness and structure before they commit to a grasp.</p>
-      </li>
-    </ul>
-    <p class="more">Full record: <a href="https://scholar.google.com/citations?user=tO8oU9yp5JkC" rel="noopener">Google Scholar</a> &middot; <a href="https://orcid.org/0009-0003-9795-5611" rel="noopener">ORCID</a> &middot; <a href="https://github.com/stavanio" rel="noopener">GitHub</a></p>
-  </div>
-</section>
-
 <section class="sec mef" id="mefferdi" aria-labelledby="co-h">
   <div class="wrap">
-    <p class="kicker">04 / Now</p>
+    <p class="kicker">03 / Now</p>
     <div class="grid mef-g">
       <div class="mef-t">
         <h2 id="co-h">Mefferdi</h2>
@@ -470,7 +412,7 @@ a:hover{color:var(--copper)}
 
 <section class="sec garage" id="workbench" aria-labelledby="bench-h">
   <div class="wrap">
-    <p class="kicker">05 / Garage</p>
+    <p class="kicker">04 / Garage</p>
     <h2 id="bench-h">From the garage</h2>
     <p class="intro">No lab manager, no procurement queue, no one to hand the hard part to. Just a bench, a power supply, and machines that either work or do not.</p>
     <div class="sys">
@@ -542,6 +484,64 @@ a:hover{color:var(--copper)}
       <li><p class="label">Patents</p><p class="t">3 granted, more pending, in machine vision, sensor fusion, and robotics.</p></li>
     </ul>
     <p class="more"><a href="/gallery/">See the real hardware in the gallery</a></p>
+  </div>
+</section>
+
+<section class="sec res" id="research" aria-labelledby="res-h">
+  <div class="wrap">
+    <p class="kicker">05 / Research</p>
+    <h2 id="res-h">Physical AI research, built on real hardware</h2>
+    <p class="intro">Alongside the industry work, I run an independent research program on one question: what makes a robot safe to deploy? It starts with perception, because most failures begin with a machine that is confidently wrong about the world, and it is moving toward manipulation. Six projects, open code, and real hardware in the loop.</p>
+    <ul class="papers">
+      <li>
+        <p class="st">ICRA 2026 workshop, spotlight</p>
+        <h3>Perception Debt</h3>
+        <p class="what">A formal model of how small, individually tolerable perception errors accumulate and compound until a robot crosses a safety threshold.</p>
+        <p class="how"><span class="label">How</span>Defines a debt-to-margin ratio and a time-to-default estimate that a running robot can track.</p>
+        <p class="why"><span class="label">Why it matters</span>Turns &ldquo;the camera is a bit off&rdquo; into a measurable safety budget, with an estimate of how long a robot has before it fails.</p>
+        <p class="lk"><a href="https://github.com/stavanio/perception-debt" rel="noopener">Code</a></p>
+      </li>
+      <li>
+        <p class="st">Under review, IEEE T-RO</p>
+        <h3>SESR-Bench</h3>
+        <p class="what">Clearance-aware evaluation of visual-inertial odometry.</p>
+        <p class="how"><span class="label">How</span>7 estimators including ORB-SLAM3, BASALT, and OpenVINS; 6 sequences; 210 trajectories scored as error divided by clearance.</p>
+        <p class="why"><span class="label">Why it matters</span>Five centimeters of drift is fine in a warehouse aisle and fatal in a 12 cm gap. This scores localization against the free space a robot actually has.</p>
+        <p class="lk"><a href="https://github.com/stavanio/sesr" rel="noopener">Code</a></p>
+      </li>
+      <li>
+        <p class="st">Under review, Communications Engineering</p>
+        <h3>TRiX</h3>
+        <p class="what">A neuro-symbolic runtime safety layer that checks policy- and VLM-generated robot commands against physics-derived limits before execution.</p>
+        <p class="how"><span class="label">How</span>Allow, project, or reject each command; evaluated on a benchmark of six contact-rich disassembly tasks.</p>
+        <p class="why"><span class="label">Why it matters</span>A general-purpose AI model can propose a plausible action with no idea whether it will strip a thread or crack a board. TRiX sits between the model and the motors.</p>
+        <p class="lk"><a href="https://github.com/stavanio/trix-disasm-suite" rel="noopener">Code</a></p>
+      </li>
+      <li>
+        <p class="st">Working paper</p>
+        <h3>LWSD-Bench</h3>
+        <p class="what">A single diagnostic for how fast a robot&rsquo;s world model goes stale as perception latency grows.</p>
+        <p class="how"><span class="label">How</span>Runs as a ROS 2 node beside the robot stack; latency-injection experiments on a live rover.</p>
+        <p class="why"><span class="label">Why it matters</span>Shows why a bigger, slower model can make a robot less safe, not more.</p>
+        <p class="lk"><a href="https://github.com/stavanio/lwsd-bench" rel="noopener">Code</a></p>
+      </li>
+      <li>
+        <p class="st">Working paper</p>
+        <h3>OVAC</h3>
+        <p class="what">Open-vocabulary detection and aerial-ground coordination for search-and-rescue scenarios.</p>
+        <p class="how"><span class="label">How</span>Evaluated on aerial datasets with reproducible trial scripts and a threshold sweep.</p>
+        <p class="why"><span class="label">Why it matters</span>Lets a drone and a ground robot look for things they were never trained on, using models small enough to run onboard.</p>
+        <p class="lk"><a href="https://github.com/stavanio/ovac" rel="noopener">Code</a></p>
+      </li>
+      <li>
+        <p class="st">In progress</p>
+        <h3>Diagnostic Manipulation</h3>
+        <p class="what">Force-based probing that lets an arm learn what an object is by touching it, not just looking at it.</p>
+        <p class="how"><span class="label">How</span>Running on the B601 arm in the lab.</p>
+        <p class="why"><span class="label">Why it matters</span>Robots that handle unknown objects need to feel stiffness and structure before they commit to a grasp.</p>
+      </li>
+    </ul>
+    <p class="more">Full record: <a href="https://scholar.google.com/citations?user=tO8oU9yp5JkC" rel="noopener">Google Scholar</a> &middot; <a href="https://orcid.org/0009-0003-9795-5611" rel="noopener">ORCID</a> &middot; <a href="https://github.com/stavanio" rel="noopener">GitHub</a></p>
   </div>
 </section>
 
