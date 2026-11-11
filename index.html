@@ -111,11 +111,18 @@ a:hover{color:var(--copper)}
 .mef-b p+p{margin-top:.5rem;font-size:.93rem;line-height:1.5}
 .market{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem 1.5rem;margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid var(--deep-rule);font-size:.9rem;color:var(--on-deep-2)}
 .market .m{font-family:var(--serif);font-size:2rem;line-height:1;color:var(--copper-l)}
+.ways{background:var(--paper-2);border-block:1px solid var(--rule)}
+.way{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:clamp(2rem,5vw,3rem);border-top:2px solid var(--ink)}
+.way li{padding:1.5rem 1.5rem 0 0}
+.way li+li{padding-left:1.5rem;border-left:1px solid var(--rule)}
+.way .num{font:500 .7rem/1 var(--mono);letter-spacing:.14em;color:var(--copper)}
+.way h3{margin-top:.8rem;font-size:1.5rem;line-height:1.15}
+.way h3+p{margin-top:.6rem;font-size:.93rem;line-height:1.5;color:var(--ink-2)}
 .ledger{margin-top:clamp(2.5rem,5vw,3.5rem);border-top:2px solid var(--ink)}
 .lrow{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr) minmax(0,1.6fr);column-gap:2rem;padding-block:1.75rem 2rem;border-bottom:1px solid var(--rule)}
 .l3{grid-template-columns:minmax(0,.8fr) repeat(3,minmax(0,1.07fr))}
-.lh{font-size:1.6rem;line-height:1.1}
-.lh span{display:block;margin-top:.45rem;font:500 .68rem/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.lh{font-size:clamp(2rem,3.4vw,2.6rem);line-height:1}
+.lh span{display:block;margin-top:.7rem;max-width:16em;font:500 .68rem/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
 .ledger svg{width:100%;height:auto}
 .ledger figcaption{margin-top:.8rem;font-size:.9rem;line-height:1.45;color:var(--ink-2)}
 .ledger figcaption .label{display:block;margin-bottom:.3rem;color:var(--ink)}
@@ -176,6 +183,9 @@ a:hover{color:var(--copper)}
   .ip{margin-top:2rem}
   .pull::before{position:static}
   .scale{grid-template-columns:1fr 1fr}
+  .way{grid-template-columns:1fr}
+  .way li,.way li+li{padding:1.25rem 0;border-left:0}
+  .way li+li{border-top:1px solid var(--rule)}
   .mef-b{grid-template-columns:1fr 1fr}
   .lrow,.l3{grid-template-columns:1fr}
   .ledger svg{max-width:440px}
@@ -218,6 +228,7 @@ a:hover{color:var(--copper)}
   <div class="wrap">
     <p class="kicker">01 / Track record</p>
     <h2 id="tr-h" class="pull">Pilots are cheap. Site twelve is where you learn what you actually built.</h2>
+    <p class="intro">My career has been spent at the point where a prototype has to become a product. The demo works, the money is committed, and the system now has to run every day, in places that do not forgive mistakes. That is the part I am good at.</p>
     <dl class="scale">
       <div><dt>Multi-$B</dt><dd>Infrastructure and commerce impact of programs I led or materially shaped across cloud, AI capacity, and automation</dd></div>
       <div><dt>1.3M+ vCPUs</dt><dd>Arm64 cloud platform I own across generations, from silicon bring-up to production fleet</dd></div>
@@ -228,7 +239,7 @@ a:hover{color:var(--copper)}
     </dl>
     <div class="ledger">
       <div class="lrow">
-        <h3 class="lh">Microsoft<span>2022 to now</span></h3>
+        <h3 class="lh">Microsoft<span>The compute AI runs on</span></h3>
         <figure>
           <svg viewBox="0 0 360 220" role="img" aria-label="Server racks with one GPU rack highlighted, linked to an Arm server chip">
           <defs><pattern id="rk" width="44" height="14" patternUnits="userSpaceOnUse"><path d="M8 7h28" stroke="#1C2922" stroke-width="1"/></pattern>
@@ -257,7 +268,7 @@ a:hover{color:var(--copper)}
         </figure>
       </div>
       <div class="lrow l3">
-        <h3 class="lh">Amazon<span>2015 to 2022</span></h3>
+        <h3 class="lh">Amazon<span>Robots and vision working next to people</span></h3>
         <figure>
           <svg viewBox="0 0 360 220" role="img" aria-label="Mobile drive units carrying shelf pods, stopping at a safety zone around a person wearing a sensing vest">
           <path class="hair" d="M10 192H350"/>
@@ -299,7 +310,7 @@ a:hover{color:var(--copper)}
         </figure>
       </div>
       <div class="lrow">
-        <h3 class="lh">Cummins<span>2011 to 2015</span></h3>
+        <h3 class="lh">Cummins<span>Where hardware taught me consequences</span></h3>
         <figure>
           <svg viewBox="0 0 360 220" role="img" aria-label="Class 8 conventional truck with the engine and vehicle controller highlighted">
           <path class="hair" d="M10 192H350"/>
@@ -318,11 +329,24 @@ a:hover{color:var(--copper)}
   </div>
 </section>
 
+<section class="sec ways" aria-labelledby="ways-h">
+  <div class="wrap">
+    <p class="kicker">02 / How I work</p>
+    <h2 id="ways-h">Four things I do well</h2>
+    <ul class="way">
+      <li><p class="num">01</p><h3>Zero to one</h3><p>Founding-team work on systems nobody had built before, when the requirements are still being discovered and the team is still being formed.</p></li>
+      <li><p class="num">02</p><h3>One to many</h3><p>Taking something that works once and making it work everywhere: more sites, more regions, more load, with the same reliability.</p></li>
+      <li><p class="num">03</p><h3>Safety by design</h3><p>Machines that share space with people need safety engineered in from the first hazard analysis, not added after the first incident.</p></li>
+      <li><p class="num">04</p><h3>Across the stack</h3><p>Comfortable from silicon and firmware to perception models and fleet operations, and able to translate between the teams that own each layer.</p></li>
+    </ul>
+  </div>
+</section>
+
 <section class="sec res" id="research" aria-labelledby="res-h">
   <div class="wrap">
-    <p class="kicker">02 / Research</p>
+    <p class="kicker">03 / Research</p>
     <h2 id="res-h">Physical AI research, built on real hardware</h2>
-    <p class="intro">An independent research program on what makes robots safe to deploy: perception first, manipulation next. Six projects, open code, and hardware in the loop.</p>
+    <p class="intro">Alongside the industry work, I run an independent research program on one question: what makes a robot safe to deploy? It starts with perception, because most failures begin with a machine that is confidently wrong about the world, and it is moving toward manipulation. Six projects, open code, and real hardware in the loop.</p>
     <ul class="papers">
       <li>
         <p class="st">ICRA 2026 workshop, spotlight</p>
@@ -378,12 +402,11 @@ a:hover{color:var(--copper)}
 
 <section class="sec mef" id="mefferdi" aria-labelledby="co-h">
   <div class="wrap">
-    <p class="kicker">03 / Now</p>
+    <p class="kicker">04 / Now</p>
     <div class="grid mef-g">
       <div class="mef-t">
         <h2 id="co-h">Mefferdi</h2>
-        <p class="label since">Founded 2019 &middot; active since 2022</p>
-        <p class="lead">An ocean-intelligence company building subsea vehicles for inspection that costs less and stays down longer. Built by a team across four countries.</p>
+        <p class="lead">Subsea inspection is still slow, expensive, and dependent on ships and crews. Mefferdi is an ocean-intelligence company building vehicles to change that: inspection that costs less, stays down longer, and sees more. Built by a team across four countries.</p>
         <p class="go"><a href="https://mefferdi.com" rel="noopener">mefferdi.com</a></p>
       </div>
       <div class="mef-d">
@@ -427,8 +450,9 @@ a:hover{color:var(--copper)}
 
 <section class="sec bench" aria-labelledby="bench-h">
   <div class="wrap">
-    <p class="kicker">04 / Lab</p>
+    <p class="kicker">05 / Lab</p>
     <h2 id="bench-h">From the lab</h2>
+    <p class="intro">Ideas get tested on a bench at home before they become papers or products. The hardware below is where the research above actually runs.</p>
     <div class="grid shelf sk">
       <figure class="b601">
         <svg viewBox="0 0 360 260" role="img" aria-label="Line drawing of the B601 robotic arm reaching toward a box, with its CAN bus traced along the joints">
@@ -471,24 +495,23 @@ a:hover{color:var(--copper)}
 
 <section class="also" aria-labelledby="also-h">
   <div class="wrap">
-    <h2 id="also-h" class="kicker">05 / Recognition and service</h2>
+    <h2 id="also-h" class="kicker">06 / Recognition and service</h2>
     <ul>
       <li>CES Innovation Awards judge, Advanced Mobility and Robotics</li>
       <li>UW CoMotion Innovation Gap Fund judge</li>
       <li>Robotics and AI advisor, UW CoMotion</li>
       <li>Industry consultant, UW School of Oceanography</li>
       <li>Purdue advisory work</li>
-      <li>IEEE Indiana Section Vice Chair, through 2015</li>
+      <li>Former IEEE Indiana Section Vice Chair</li>
       <li>FAA Part 107 remote pilot</li>
-      <li>M.S. Electrical Engineering, University of Pennsylvania</li>
-      <li>B.S. Electrical Engineering, Nirma University</li>
     </ul>
   </div>
 </section>
 
 <section class="wrap contact" id="contact" aria-labelledby="contact-h">
-  <p class="kicker">06 / Contact</p>
+  <p class="kicker">07 / Contact</p>
   <h2 id="contact-h">Advisory, physical AI research collaborations, and stealth inquiries.</h2>
+  <p class="intro">If you are building or funding machines that have to work in the real world, I would like to hear about it.</p>
   <!--email_off--><p class="mail"><a href="mailto:stavand@ieee.org">stavand@ieee.org</a></p><!--email_on-->
   <ul>
     <li><a href="tel:+12154100092">+1 215 410 0092</a></li>
