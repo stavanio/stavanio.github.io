@@ -139,9 +139,14 @@ a:hover{color:var(--copper)}
 
 .bench{}
 .shelf{align-items:end;margin-top:clamp(2rem,5vw,3rem);padding-bottom:1.25rem;border-bottom:1px solid var(--ink)}
-.shelf img{width:100%;height:auto}
+.shelf svg{width:100%;height:auto}
+.shelf .s{fill:none;stroke:var(--ink);stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
+.shelf .hair{fill:none;stroke:var(--rule);stroke-width:1}
+.shelf .bg{fill:var(--paper)}
+.shelf .cu{fill:var(--copper)}
+.cap-c{grid-column:9/13}
 .b601{grid-column:1/6}
-.yah{grid-column:6/9;padding-bottom:.5rem}
+.yah{grid-column:6/9}
 .ip{grid-column:9/13;align-self:stretch;display:flex;flex-direction:column;justify-content:flex-end;gap:1.5rem}
 .ip>div{padding-left:1.1rem;border-left:2px solid var(--copper)}
 .ip .t{margin-top:.35rem;font-family:var(--serif);font-size:1.15rem;line-height:1.35}
@@ -181,8 +186,8 @@ a:hover{color:var(--copper)}
   .hero-img{order:-1}
   .hero-img img{width:100%;margin:0}
   .mef-t,.mef-d,.mef-fig{grid-column:1/-1;grid-row:auto}
-  .b601{grid-column:1/9}.yah{grid-column:9/13;padding-bottom:0}
-  .ip,.cap-a,.cap-b{grid-column:1/-1}
+  .b601{grid-column:1/8}.yah{grid-column:8/13}
+  .ip,.cap-a,.cap-b,.cap-c{grid-column:1/-1}
   .ip{margin-top:2rem}
   .tl-row,.axis{grid-template-columns:1fr}
   .axis .who-sp{display:none}
@@ -208,7 +213,7 @@ a:hover{color:var(--copper)}
 <div class="top">
 <header class="wrap mast">
   <a class="label" href="/">stavan.io</a>
-  <a class="label" href="#contact">Contact</a>
+  <span><a class="label" href="/gallery/">Gallery</a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="label" href="#contact">Contact</a></span>
 </header>
 
 <main id="main">
@@ -409,7 +414,7 @@ a:hover{color:var(--copper)}
       <div class="mef-t">
         <h2 id="co-h">Mefferdi</h2>
         <p class="lead">I co-founded Mefferdi and lead its technical work: subsea vehicles with engineered pressure systems, variable buoyancy, and on-board perception for AI-enabled inspection. The team spans four countries.</p>
-        <p class="go"><a href="https://mefferdi.com" rel="noopener">mefferdi.com</a></p>
+        <p class="go"><a href="https://mefferdi.com" rel="noopener">mefferdi.com</a> &nbsp;&middot;&nbsp; <a href="/gallery/">Photos</a></p>
       </div>
       <div class="mef-d">
         <p class="label">Design targets</p>
@@ -447,9 +452,33 @@ a:hover{color:var(--copper)}
   <div class="wrap">
     <p class="kicker">05 / Lab</p>
     <h2 id="bench-h">From the lab</h2>
-    <div class="grid shelf">
-      <figure class="b601"><img src="/assets/b601-arm.webp" alt="B601 robotic arm with its gripper extended" width="976" height="947" loading="lazy" decoding="async"></figure>
-      <figure class="yah"><img src="/assets/yahboom-rover.webp" alt="Yahboom mecanum-wheel rover seen from above" width="406" height="482" loading="lazy" decoding="async"></figure>
+    <div class="grid shelf sk">
+      <figure class="b601">
+        <svg viewBox="0 0 360 260" role="img" aria-label="Line drawing of the B601 robotic arm reaching toward a box, with its CAN bus traced along the joints">
+          <path class="hair" d="M10 232H350"/>
+          <path d="M228 206V132L262 70L150 84" fill="none" stroke="#A2502A" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <g class="s"><rect x="150" y="222" width="150" height="10"/><rect x="200" y="180" width="56" height="42"/><rect x="204" y="120" width="48" height="60"/>
+          <path d="M218 126L250 64M238 138L272 76"/><path d="M256 60L150 73M268 80L152 95"/>
+          <rect x="246" y="24" width="32" height="36"/><path d="M252 34H272M252 44H272"/>
+          <rect x="104" y="74" width="40" height="20"/><path d="M104 77L80 70M104 91L80 98"/>
+          <rect x="60" y="192" width="34" height="40"/></g>
+          <g class="s bg"><circle cx="228" cy="132" r="12"/><circle cx="262" cy="70" r="11"/><circle cx="150" cy="84" r="9"/></g>
+          <g class="cu"><circle cx="228" cy="132" r="4"/><circle cx="262" cy="70" r="4"/><circle cx="150" cy="84" r="3"/></g>
+        </svg>
+      </figure>
+      <figure class="yah">
+        <svg viewBox="70 12 228 214" role="img" aria-label="Top-down line drawing of the Yahboom mecanum-wheel rover with LiDAR scan rings, following a taped line toward detected objects">
+          <path d="M180 18V74" stroke="#A2502A" stroke-width="6" stroke-opacity=".35"/>
+          <path d="M120 130A60 60 0 0 1 240 130M80 130A100 100 0 0 1 280 130" fill="none" stroke="#A2502A" stroke-width="1" stroke-dasharray="3 5"/>
+          <g fill="none" stroke="#A2502A" stroke-width="1.25" stroke-dasharray="4 3"><rect x="84" y="28" width="34" height="32"/><rect x="246" y="26" width="46" height="28"/></g>
+          <g class="s"><circle cx="99" cy="44" r="9"/><path d="M108 40h4v8h-4"/><path d="M252 44q8-12 34-6v8h-34z"/>
+          <rect x="140" y="90" width="80" height="130"/><rect x="166" y="74" width="28" height="16"/><rect x="154" y="168" width="52" height="26"/><path d="M162 176h20M162 184h12"/>
+          <rect x="116" y="100" width="22" height="40"/><rect x="222" y="100" width="22" height="40"/><rect x="116" y="172" width="22" height="40"/><rect x="222" y="172" width="22" height="40"/>
+          <path d="M118 108l18 8M118 118l18 8M118 128l18 8M224 116l18-8M224 126l18-8M224 136l18-8M118 180l18 8M118 190l18 8M118 200l18 8M224 188l18-8M224 198l18-8M224 208l18-8"/></g>
+          <g class="s bg"><circle cx="180" cy="130" r="16"/></g>
+          <circle cx="180" cy="130" r="6" fill="#A2502A"/>
+        </svg>
+      </figure>
       <div class="ip">
         <div><p class="label">Edge compute</p><p class="t">Jetson Orin nodes running ROS 2 for perception and latency experiments.</p></div>
         <div><p class="label">Patents</p><p class="t">3 granted, more pending, in machine vision, sensor fusion, and robotics.</p></div>
@@ -458,6 +487,7 @@ a:hover{color:var(--copper)}
     <div class="grid caps">
       <p class="cap-a"><span class="label">B601 arm</span>CAN-bus motors, custom joint-level control at 200 Hz. A manipulation and safety testbed.</p>
       <p class="cap-b"><span class="label">Yahboom rover</span>LiDAR mapping, perception, and autonomy experiments.</p>
+      <p class="cap-c"><a href="/gallery/">See the real hardware in the gallery</a></p>
     </div>
   </div>
 </section>
