@@ -152,6 +152,8 @@ a:hover{color:var(--copper)}
 .ledger{margin-top:clamp(2.5rem,5vw,3.5rem);border-top:2px solid var(--ink)}
 .lrow{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr) minmax(0,1.6fr);column-gap:2rem;padding-block:1.75rem 2rem;border-bottom:1px solid var(--rule)}
 .l3{grid-template-columns:minmax(0,.8fr) repeat(3,minmax(0,1.07fr))}
+.lc .lh{grid-row:1/3}
+.note2{grid-column:2/-1;margin-bottom:1.5rem;max-width:40em;font-family:var(--serif);font-size:clamp(1.15rem,1.8vw,1.35rem);line-height:1.4}
 .lh{font-size:clamp(2rem,3.4vw,2.6rem);line-height:1}
 .lh span{display:block;margin-top:.7rem;max-width:16em;font:500 .68rem/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
 .ledger svg{width:100%;height:auto}
@@ -179,7 +181,8 @@ a:hover{color:var(--copper)}
 @media (max-width:980px){
   .hero-text{grid-column:1/-1}
   .lrow,.l3{grid-template-columns:1fr 1fr;row-gap:1.25rem}
-  .lh{grid-column:1/-1}
+  .lh,.note2{grid-column:1/-1}
+  .lc .lh{grid-row:auto}
 }
 @media (max-width:860px){
   .papers{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -329,8 +332,9 @@ a:hover{color:var(--copper)}
           <figcaption><span class="label">Robotics &middot; packing</span>Packing cells and robot fleet from pilot to production, and a 6-DoF tote-handling arm from concept to production with +38% throughput.</figcaption>
         </figure>
       </div>
-      <div class="lrow">
-        <h3 class="lh">Cummins<span>Where hardware taught me consequences</span></h3>
+      <div class="lrow l3 lc">
+        <h3 class="lh">Cummins<span>Horsepower before compute</span></h3>
+        <p class="note2">My first engineering job, and still the one I talk about most fondly. Cummins is where I learned that a design decision does not stay on a screen. It ends up on a highway, pulling 80,000 pounds, with a driver trusting it to start every morning. Everything I have built since carries that habit.</p>
         <figure>
           <svg viewBox="0 0 360 220" role="img" aria-label="Class 8 conventional truck with the engine and vehicle controller highlighted">
           <path class="hair" d="M10 192H350"/>
@@ -342,7 +346,29 @@ a:hover{color:var(--copper)}
           <g class="s bg"><circle cx="78" cy="174" r="18"/><circle cx="122" cy="174" r="18"/><circle cx="276" cy="174" r="18"/></g>
           <g class="s"><circle cx="78" cy="174" r="5"/><circle cx="122" cy="174" r="5"/><circle cx="276" cy="174" r="5"/></g>
         </svg>
-          <figcaption><span class="label">Commercial vehicles</span>Electronic control systems for on-highway diesel platforms: Kenworth and Peterbilt trucks on ISX and ISB powertrains.</figcaption>
+          <figcaption><span class="label">Trucks</span>Advanced vehicle electronics for Kenworth and Peterbilt trucks, worked out side by side with the truck makers.</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 360 220" role="img" aria-label="Inline six-cylinder diesel engine with fan and flywheel">
+          <path class="hair" d="M10 192H350"/>
+          <g class="s"><rect x="80" y="92" width="200" height="68"/><path d="M92 160V176H268V160"/>
+          <rect x="88" y="66" width="24" height="26"/><rect x="120" y="66" width="24" height="26"/><rect x="152" y="66" width="24" height="26"/><rect x="184" y="66" width="24" height="26"/><rect x="216" y="66" width="24" height="26"/><rect x="248" y="66" width="24" height="26"/>
+          <path d="M84 56H276M100 66V56M132 66V56M164 66V56M196 66V56M228 66V56M260 66V56"/>
+          <path d="M80 126H60M60 86V166"/><path d="M48 96L72 156M72 96L48 156"/></g>
+          <g class="s bg"><circle cx="300" cy="126" r="34"/></g><g class="s"><circle cx="300" cy="126" r="8"/></g>
+          <rect class="cu" x="150" y="112" width="34" height="22"/>
+        </svg>
+          <figcaption><span class="label">Powertrain</span>The ISX and ISB engine platforms: the heavy-duty and medium-duty diesels that are workhorses of North American trucking.</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 360 220" role="img" aria-label="Engine control module wired to sensors and actuators">
+          <path class="hair" d="M10 192H350"/>
+          <path d="M130 100H70V60M130 120H50M130 140H70V176M230 100H290V60M230 120H310M230 140H290V176" fill="none" stroke="#A2502A" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <g class="s"><rect x="130" y="76" width="100" height="88"/><path d="M142 76V66M158 76V66M174 76V66M190 76V66M206 76V66M218 76V66"/><rect x="150" y="164" width="60" height="14"/><path d="M160 171h40"/></g>
+          <g class="s bg"><circle cx="70" cy="52" r="8"/><circle cx="42" cy="120" r="8"/><circle cx="70" cy="184" r="8"/><circle cx="290" cy="52" r="8"/><circle cx="318" cy="120" r="8"/><circle cx="290" cy="184" r="8"/></g>
+          <rect class="cu" x="162" y="102" width="36" height="36"/>
+        </svg>
+          <figcaption><span class="label">Controls</span>Specified and integrated the electronic control systems that tie engine and vehicle together, through global OEM launches. Promoted to senior engineer along the way.</figcaption>
         </figure>
       </div>
     </div>
