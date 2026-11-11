@@ -136,6 +136,17 @@ a:hover{color:var(--copper)}
 .rig dd{font-size:.9rem;color:var(--ink-2)}
 .runs{margin-top:1rem;font-size:.9rem}
 .runs .label{margin-right:.75rem;color:var(--copper)}
+.sys{margin-top:clamp(2rem,5vw,3rem);padding:1.75rem 2rem 2rem;background:var(--deep);color:var(--on-deep)}
+.sys .label{color:var(--copper-l)}
+.sys .big{margin-top:.8rem;max-width:30em;font-family:var(--serif);font-size:clamp(1.4rem,2.6vw,2rem);line-height:1.25}
+.sys .big+p{margin-top:1rem;max-width:44em;color:var(--on-deep-2)}
+.rigs{margin-top:2rem}
+.meat{margin-top:1.5rem}
+.meat .label{margin-top:1.25rem;color:var(--copper)}
+.meat ul{margin-top:.5rem}
+.meat li{position:relative;padding:.5rem 0 .5rem 1.1rem;border-bottom:1px solid var(--rule);font-size:.93rem;line-height:1.5}
+.meat li::before{content:"";position:absolute;left:0;top:1.15em;width:.45rem;height:1px;background:var(--copper)}
+.meat .lk{margin-top:1rem;font-size:.9rem}
 .bay{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5rem 2rem;margin-top:2.5rem;padding-top:1.5rem;border-top:2px solid var(--ink)}
 .bay .t{margin-top:.4rem;font-family:var(--serif);font-size:1.15rem;line-height:1.35}
 .ledger{margin-top:clamp(2.5rem,5vw,3.5rem);border-top:2px solid var(--ink)}
@@ -461,7 +472,12 @@ a:hover{color:var(--copper)}
   <div class="wrap">
     <p class="kicker">05 / Garage</p>
     <h2 id="bench-h">From the garage</h2>
-    <p class="intro">No lab manager, no procurement queue, no one to hand the hard part to. Just a bench, a power supply, and machines that either work or do not. This is where the research on this page gets its hands dirty, and where I stay honest about how hard robots really are.</p>
+    <p class="intro">No lab manager, no procurement queue, no one to hand the hard part to. Just a bench, a power supply, and machines that either work or do not.</p>
+    <div class="sys">
+      <p class="label">What I am building</p>
+      <p class="big">One closed loop, at home: a rover that perceives and maps, an arm that touches and manipulates, and edge compute that has to decide without the cloud.</p>
+      <p>It is a small-scale version of the problem every physical AI company runs into. Perception arrives late, wrong, or uncertain, and it feeds a machine that can break things. I am building and testing the safety layer that sits between the AI and the motors, on real hardware, where a bad command has a sound.</p>
+    </div>
     <div class="rigs">
       <article class="rig">
         <svg viewBox="0 0 360 260" role="img" aria-label="Line drawing of the B601 robotic arm reaching toward a box, with its CAN bus traced along the joints">
@@ -477,13 +493,18 @@ a:hover{color:var(--copper)}
         </svg>
         <p class="label">Rig 01 &middot; Manipulation</p>
         <h3>B601 arm</h3>
-        <p>A multi-joint arm I integrated motor by motor and drive with my own controller instead of a vendor black box. It is the testbed for contact, force, and what a robot should refuse to do.</p>
+        <p>A six-axis arm with a gripper that I brought up from a kit and drive with my own controller instead of a vendor black box.</p>
         <dl>
           <div><dt>200 Hz</dt><dd>Custom joint-level control loop</dd></div>
-          <div><dt>CAN bus</dt><dd>Motor integration, wired and tuned by hand</dd></div>
+          <div><dt>CAN bus</dt><dd>Seven motors, integrated and tuned by hand</dd></div>
           <div><dt>48 V</dt><dd>Actuation bus on bench power</dd></div>
         </dl>
-        <p class="runs"><span class="label">Runs</span>Diagnostic Manipulation, manipulation safety experiments</p>
+        <div class="meat">
+          <p class="label">What it took</p>
+          <ul><li>Brought every joint online over CAN, one motor at a time, before anything was allowed to move.</li><li>Chased an elbow that dropped with a thud down to the raw CAN traffic: the stock software was cutting torque once a second and letting gravity win.</li><li>Wrote gravity compensation so the arm holds itself up instead of fighting itself.</li></ul>
+          <p class="label">What it achieves</p>
+          <ul><li>Soft grasp and lift under my own control code.</li><li>Physical manipulation runs for the TRiX safety work.</li><li>The platform for Diagnostic Manipulation: learning what an object is by how it pushes back.</li></ul>
+        </div>
       </article>
       <article class="rig">
         <svg viewBox="70 12 228 214" role="img" aria-label="Top-down line drawing of the Yahboom mecanum-wheel rover with LiDAR scan rings, following a taped line toward detected objects">
@@ -499,13 +520,19 @@ a:hover{color:var(--copper)}
         </svg>
         <p class="label">Rig 02 &middot; Autonomy</p>
         <h3>Yahboom rover</h3>
-        <p>An omnidirectional rover that maps the house, gets lost on purpose, and shows exactly what happens when perception falls behind the world.</p>
+        <p>An omnidirectional rover that maps a room, finds its way around it, and shows exactly what happens when perception falls behind the world.</p>
         <dl>
           <div><dt>LiDAR</dt><dd>Mapping and localization</dd></div>
           <div><dt>Mecanum</dt><dd>Omnidirectional drive for tight indoor courses</dd></div>
-          <div><dt>ROS 2</dt><dd>Perception and autonomy stack</dd></div>
+          <div><dt>ROS</dt><dd>Sensor fusion, mapping, and navigation stack</dd></div>
         </dl>
-        <p class="runs"><span class="label">Runs</span>LWSD-Bench latency experiments, perception and autonomy trials</p>
+        <div class="meat">
+          <p class="label">What it took</p>
+          <ul><li>Out of the box it skidded, mapped badly, and drove the wrong way. I found four root causes: a mirrored LiDAR scan, an IMU reporting zeros from a firmware mismatch, sensor fusion that never received IMU data, and a navigation config fighting the robot.</li><li>The test course is masking tape at half-meter marks, a tape measure, and a mug slid across the path.</li></ul>
+          <p class="label">What it achieves</p>
+          <ul><li>Maps a living room and navigates it on its own, returning to its start point within about an inch.</li><li>Wheel odometry within 0.8% over two meters.</li><li>The LWSD latency experiment: same robot, same path, three delay conditions, showing how stale perception erodes safety.</li></ul>
+          <p class="lk"><a href="https://github.com/stavanio/yahboomlidarslamsetup" rel="noopener">Setup and fixes, open source</a></p>
+        </div>
       </article>
     </div>
     <ul class="bay">
