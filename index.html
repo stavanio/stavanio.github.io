@@ -113,19 +113,21 @@ a:hover{color:var(--copper)}
 .bar.alt{background:#5B6B62}
 .bar.cu{background:var(--copper)}
 .bar em{position:absolute;left:.5rem;top:50%;transform:translateY(-50%);font:500 .62rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--paper);font-style:normal;white-space:nowrap}
-.now{position:absolute;top:.35rem;left:var(--s);width:.9rem;height:.9rem;margin-left:-.45rem;background:var(--copper);border-radius:50%}
 .axis{display:grid;grid-template-columns:13rem 1fr;column-gap:1.5rem;padding-top:.6rem}
 .axis .track{height:1rem;font:500 .66rem/1 var(--mono);color:var(--ink-2)}
 .axis .track span{position:absolute;left:var(--s);transform:translateX(-50%)}
-.vign{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;margin-top:clamp(2.5rem,5vw,3.5rem)}
-.vign svg{width:100%;height:auto}
-.vign figcaption{margin-top:.8rem;font-size:.9rem;line-height:1.45;color:var(--ink-2)}
-.vign figcaption .label{display:block;margin-bottom:.3rem;color:var(--ink)}
-.vign .s{fill:none;stroke:var(--ink);stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
-.vign .hair{fill:none;stroke:var(--rule);stroke-width:1}
-.vign .cu{fill:var(--copper)}
-.vign .bg{fill:var(--paper)}
-.vign .cone path{fill:var(--copper);fill-opacity:.07;stroke:var(--copper);stroke-width:1;stroke-dasharray:3 4}
+.ledger{margin-top:clamp(2.5rem,5vw,3.5rem);border-top:2px solid var(--ink)}
+.lrow{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr) minmax(0,1.6fr);column-gap:2rem;padding-block:1.75rem 2rem;border-bottom:1px solid var(--rule)}
+.lh{font-size:1.6rem;line-height:1.1}
+.lh span{display:block;margin-top:.45rem;font:500 .68rem/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.ledger svg{width:100%;height:auto}
+.ledger figcaption{margin-top:.8rem;font-size:.9rem;line-height:1.45;color:var(--ink-2)}
+.ledger figcaption .label{display:block;margin-bottom:.3rem;color:var(--ink)}
+.ledger .s{fill:none;stroke:var(--ink);stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
+.ledger .hair{fill:none;stroke:var(--rule);stroke-width:1}
+.ledger .cu{fill:var(--copper)}
+.ledger .bg{fill:var(--paper)}
+.ledger .cone path{fill:var(--copper);fill-opacity:.07;stroke:var(--copper);stroke-width:1;stroke-dasharray:3 4}
 
 .bench{}
 .shelf{align-items:end;margin-top:clamp(2rem,5vw,3rem);padding-bottom:1.25rem;border-bottom:1px solid var(--ink)}
@@ -157,8 +159,8 @@ a:hover{color:var(--copper)}
   .hero-text{grid-column:1/8}.hero-img{grid-column:8/13}
   .cards{grid-template-columns:1fr}
   .cards li,.cards li:nth-child(even){padding:1.5rem 0 1.75rem;border-left:0}
-  .vign{grid-template-columns:1fr;gap:1.5rem}
-  .vign svg{max-width:440px}
+  .lrow{grid-template-columns:1fr 1fr;row-gap:1.25rem}
+  .lh{grid-column:1/-1}
   .tl-row,.axis{grid-template-columns:9rem 1fr}
 }
 @media (max-width:860px){
@@ -178,6 +180,8 @@ a:hover{color:var(--copper)}
   .axis .who-sp{display:none}
   .tl-row .who{margin-bottom:.35rem}
   .pull::before{position:static}
+  .lrow{grid-template-columns:1fr}
+  .ledger svg{max-width:440px}
   .bar em{display:none}
   .also ul{flex-direction:column}
   .also li:not(:last-child)::after{content:none}
@@ -288,19 +292,50 @@ a:hover{color:var(--copper)}
   <div class="wrap">
     <p class="kicker">03 / Track record</p>
     <h2 id="tr-h" class="pull">Pilots are cheap. Site twelve is where you learn what you actually built.</h2>
-    <div class="tl" role="img" aria-label="Career timeline: Cummins 2011 to 2015; Amazon 2015 to 2022, covering robotics safety, Amazon Go, and pack automation; Azure infrastructure 2022 to now; Mefferdi now">
+    <div class="tl" role="img" aria-label="Career timeline: Cummins 2011 to 2015; Amazon 2015 to 2022, covering robotics safety, Amazon Go, and pack automation; Microsoft AI infrastructure and robotics 2022 to now; Mefferdi active 2022 to now, founded 2019">
       <div class="tl-row"><p class="who">Cummins<span>Vehicle electronics</span></p><div class="track"><span class="bar alt" style="--s:3.1%;--e:30.9%"></span></div></div>
       <div class="tl-row"><p class="who">Amazon<span>Robotics &middot; Go &middot; Robotics</span></p><div class="track">
         <span class="bar" style="--s:30.9%;--e:43.8%"><em>Safety</em></span>
         <span class="bar alt" style="--s:43.9%;--e:56.2%"><em>Go</em></span>
         <span class="bar" style="--s:56.4%;--e:70.0%"><em>Pack</em></span></div></div>
-      <div class="tl-row"><p class="who">Azure<span>AI infrastructure</span></p><div class="track"><span class="bar alt" style="--s:70.0%;--e:99.1%"></span></div></div>
-      <div class="tl-row"><p class="who">Mefferdi<span>Co-founder</span></p><div class="track"><span class="now" style="--s:99.1%"></span></div></div>
+      <div class="tl-row"><p class="who">Microsoft<span>AI infrastructure &middot; Robotics</span></p><div class="track"><span class="bar alt" style="--s:70.0%;--e:99.1%"></span></div></div>
+      <div class="tl-row"><p class="who">Mefferdi<span>Co-founder &middot; founded 2019</span></p><div class="track"><span class="bar cu" style="--s:68.8%;--e:99.1%"><em>Active</em></span></div></div>
       <div class="axis"><span class="who-sp"></span><div class="track"><span style="--s:6.2%">2012</span><span style="--s:31.2%">2016</span><span style="--s:56.2%">2020</span><span style="--s:81.2%">2024</span></div></div>
     </div>
-    <div class="vign">
-      <figure>
-        <svg viewBox="0 0 360 220" role="img" aria-label="Checkout-free store: ceiling cameras with overlapping sensor fields over shelves, one item tracked">
+    <div class="ledger">
+      <div class="lrow">
+        <h3 class="lh">Microsoft<span>2022 to now</span></h3>
+        <figure>
+          <svg viewBox="0 0 360 220" role="img" aria-label="Server racks with one GPU rack highlighted, linked to an Arm server chip">
+          <defs><pattern id="rk" width="44" height="14" patternUnits="userSpaceOnUse"><path d="M8 7h28" stroke="#1C2922" stroke-width="1"/></pattern>
+          <g id="rack2"><rect width="44" height="150" fill="url(#rk)"/><rect width="44" height="150" fill="none" stroke="#1C2922" stroke-width="1.5"/></g></defs>
+          <path class="hair" d="M10 192H350"/>
+          <use href="#rack2" x="30" y="42"/><use href="#rack2" x="82" y="42"/><use href="#rack2" x="134" y="42"/><use href="#rack2" x="186" y="42"/>
+          <rect x="134" y="42" width="44" height="150" fill="none" stroke="#A2502A" stroke-width="2"/>
+          <path d="M230 117H262" fill="none" stroke="#A2502A" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <g class="s"><rect x="262" y="82" width="70" height="70"/><path d="M276 82v-10M290 82v-10M304 82v-10M318 82v-10M276 152v10M290 152v10M304 152v10M318 152v10M262 96h-10M262 110h-10M262 124h-10M262 138h-10M332 96h10M332 110h10M332 124h10M332 138h10"/></g>
+          <rect class="cu" x="283" y="103" width="28" height="28"/>
+        </svg>
+          <figcaption><span class="label">AI infrastructure</span>Arm server compute and frontier GPU capacity, from productization to deployment.</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 360 220" role="img" aria-label="Mobile manipulator with a camera on a mast, reaching for an item on a table">
+          <path class="hair" d="M10 192H350"/>
+          <g class="cone"><path d="M142 90L300 110L292 140Z"/></g>
+          <g class="s"><rect x="100" y="148" width="140" height="28"/>
+          <path d="M130 148V98"/><rect x="118" y="82" width="24" height="16"/>
+          <path d="M205 148L195 104L250 84L278 106M272 110h14M274 110v8M284 110v8"/>
+          <path d="M268 132H342M276 132V192M334 132V192"/></g>
+          <g class="s bg"><circle cx="128" cy="180" r="12"/><circle cx="212" cy="180" r="12"/><circle cx="205" cy="148" r="4"/><circle cx="195" cy="104" r="4"/><circle cx="250" cy="84" r="4"/></g>
+          <rect class="cu" x="282" y="118" width="16" height="14"/>
+        </svg>
+          <figcaption><span class="label">Robotics</span>Robotics expertise for early-stage robotics work.</figcaption>
+        </figure>
+      </div>
+      <div class="lrow">
+        <h3 class="lh">Amazon<span>2015 to 2022</span></h3>
+        <figure>
+          <svg viewBox="0 0 360 220" role="img" aria-label="Checkout-free store: ceiling cameras with overlapping sensor fields over shelves, one item tracked">
           <path class="hair" d="M10 22H350M10 192H350"/>
           <g class="cone"><path d="M78 30L28 192H128Z"/><path d="M180 30L130 192H230Z"/><path d="M282 30L232 192H332Z"/></g>
           <g class="s"><rect x="70" y="22" width="16" height="9"/><rect x="172" y="22" width="16" height="9"/><rect x="274" y="22" width="16" height="9"/>
@@ -311,10 +346,10 @@ a:hover{color:var(--copper)}
           <circle cx="90" cy="129" r="15" fill="none" stroke="#A2502A" stroke-width="1.5"/>
           <path d="M90 108v8M90 142v8M69 129h8M103 129h8" stroke="#A2502A" stroke-width="1.5"/>
         </svg>
-        <figcaption><span class="label">Amazon &middot; Go</span>Founding-team work on computer vision and sensor fusion.</figcaption>
-      </figure>
-      <figure>
-        <svg viewBox="0 0 360 220" role="img" aria-label="Pack cell: a six-axis arm placing an item into a box on a conveyor, inside a dashed safety envelope">
+          <figcaption><span class="label">Go</span>Founding-team work on computer vision and sensor fusion for checkout-free stores.</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 360 220" role="img" aria-label="Pack cell: a six-axis arm placing an item into a box on a conveyor, inside a dashed safety envelope">
           <path class="hair" d="M10 192H350"/>
           <path d="M175 192A85 85 0 0 1 345 192" fill="none" stroke="#A2502A" stroke-width="1.5" stroke-dasharray="4 5"/>
           <g class="s"><rect x="20" y="150" width="200" height="8"/><path d="M32 158V192M208 158V192"/>
@@ -325,10 +360,13 @@ a:hover{color:var(--copper)}
           <g class="s bg"><circle cx="260" cy="172" r="4"/><circle cx="250" cy="108" r="4"/><circle cx="198" cy="92" r="4"/></g>
           <rect class="cu" x="176" y="120" width="16" height="12"/>
         </svg>
-        <figcaption><span class="label">Amazon &middot; Robotics</span>Pack and warehouse automation and functional safety, pilot to production.</figcaption>
-      </figure>
-      <figure>
-        <svg viewBox="0 0 360 220" role="img" aria-label="Class 8 conventional truck with the engine and vehicle controller highlighted">
+          <figcaption><span class="label">Robotics</span>Pack and warehouse automation and functional safety, from pilot cell to 43 sites.</figcaption>
+        </figure>
+      </div>
+      <div class="lrow">
+        <h3 class="lh">Cummins<span>2011 to 2015</span></h3>
+        <figure>
+          <svg viewBox="0 0 360 220" role="img" aria-label="Class 8 conventional truck with the engine and vehicle controller highlighted">
           <path class="hair" d="M10 192H350"/>
           <g class="s"><path d="M40 166H312M60 166V158H90"/>
           <path d="M110 166V82H170V166"/><path d="M170 166V96H212L218 120H292Q304 122 304 134V166"/>
@@ -338,8 +376,9 @@ a:hover{color:var(--copper)}
           <g class="s bg"><circle cx="78" cy="174" r="18"/><circle cx="122" cy="174" r="18"/><circle cx="276" cy="174" r="18"/></g>
           <g class="s"><circle cx="78" cy="174" r="5"/><circle cx="122" cy="174" r="5"/><circle cx="276" cy="174" r="5"/></g>
         </svg>
-        <figcaption><span class="label">Cummins</span>Advanced vehicle electronics on ISX, ISB, and related powertrains.</figcaption>
-      </figure>
+          <figcaption><span class="label">Commercial vehicles</span>Advanced vehicle electronics for Kenworth and Peterbilt trucks on ISX, ISB, and related powertrains.</figcaption>
+        </figure>
+      </div>
     </div>
   </div>
 </section>
