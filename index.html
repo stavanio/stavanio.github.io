@@ -103,9 +103,6 @@ a:hover{color:var(--copper)}
 .scale dt{font-family:var(--serif);font-size:clamp(2rem,3.6vw,2.8rem);line-height:1;letter-spacing:-.02em}
 .scale dd{margin-top:.5rem;font-size:.93rem;line-height:1.45;color:var(--ink-2);max-width:22em}
 .sub{margin-top:1rem;max-width:36em;color:var(--on-deep-2)}
-.pts{margin-top:.7rem;border-top:1px solid var(--rule)}
-.pts li{position:relative;padding:.45rem 0 .45rem 1rem;border-bottom:1px solid var(--rule);font-size:.86rem;line-height:1.4}
-.pts li::before{content:"";position:absolute;left:0;top:.95em;width:.4rem;height:1px;background:var(--copper)}
 .intro{margin-top:1.25rem;max-width:40em;color:var(--ink-2)}
 .papers .how{margin-top:.7rem;font-size:.88rem;line-height:1.45;color:var(--ink-2)}
 .papers .how .label{display:block;margin-bottom:.2rem}
@@ -243,7 +240,7 @@ a:hover{color:var(--copper)}
           <g class="s"><rect x="262" y="82" width="70" height="70"/><path d="M276 82v-10M290 82v-10M304 82v-10M318 82v-10M276 152v10M290 152v10M304 152v10M318 152v10M262 96h-10M262 110h-10M262 124h-10M262 138h-10M332 96h10M332 110h10M332 124h10M332 138h10"/></g>
           <rect class="cu" x="283" y="103" width="28" height="28"/>
         </svg>
-          <figcaption><span class="label">AI infrastructure</span>Own Microsoft&rsquo;s Cobalt Arm64 platform across generations, plus GB200 and GB300-class GPU capacity.<ul class="pts"><li>Shipped Cobalt 100, Microsoft&rsquo;s first in-house Arm64 platform, on schedule at 100% integration-test pass</li><li>Leading Cobalt 200 and the roadmap beyond it</li><li>Powers first-party workloads (M365, Bing, Xbox) and customers such as OpenAI, Snowflake, and Databricks</li><li>Own serviceability and fault diagnostics across ~15 fault classes per generation</li><li>35+ first-of-kind platform features integrated across OS, firmware, networking, and fabric</li><li>Brief Azure CVP and EVP; secure funding for the multi-generation strategy</li></ul></figcaption>
+          <figcaption><span class="label">AI infrastructure</span>Shipped Cobalt 100, Microsoft&rsquo;s first in-house Arm server CPU, now in 32 Azure regions. Leading Cobalt 200, plus GB200 and GB300-class GPU capacity.</figcaption>
         </figure>
         <figure>
           <svg viewBox="0 0 360 220" role="img" aria-label="Mobile manipulator with a camera on a mast, reaching for an item on a table">
@@ -270,7 +267,7 @@ a:hover{color:var(--copper)}
           <circle cx="277" cy="118" r="9"/><path d="M277 127V164M277 164L266 192M277 164L288 192M277 136L262 152M277 136L292 152"/></g>
           <rect class="cu" x="270" y="132" width="14" height="22"/>
         </svg>
-          <figcaption><span class="label">Robotics &middot; safety</span>Owned IEC 61508 functional safety and human-robot safety for the mobile robot fleet.<ul class="pts"><li>Authored the hazard analysis, SIL allocation, and fail-safe behaviors: emergency stop, zone interlocks, safe-state recovery</li><li>Safety vest program (UWB): 99.97% human-robot detection across 20 sites</li><li>Validated a 6-DoF picking arm to 0.2 mm repeatability through 40-hour endurance testing</li><li>Built a fault-injection bench and safety lab: +33% defect capture</li><li>Led 4 engineers; cut $12 per unit and lifted payload 21%</li></ul></figcaption>
+          <figcaption><span class="label">Robotics &middot; safety</span>Owned IEC 61508 functional safety for the robot fleet working alongside people, including a safety vest program with 99.97% human detection.</figcaption>
         </figure>
         <figure>
           <svg viewBox="0 0 360 220" role="img" aria-label="Checkout-free store: ceiling cameras with overlapping sensor fields over shelves, one item tracked">
@@ -284,7 +281,7 @@ a:hover{color:var(--copper)}
           <circle cx="90" cy="129" r="15" fill="none" stroke="#A2502A" stroke-width="1.5"/>
           <path d="M90 108v8M90 142v8M69 129h8M103 129h8" stroke="#A2502A" stroke-width="1.5"/>
         </svg>
-          <figcaption><span class="label">Go &middot; Just Walk Out</span>Founding member of the Advanced Sensors team; led the computer-vision sensor platform behind checkout-free stores.<ul class="pts"><li>10.5K sq ft flagship launched in 10 months, then scaled from convenience format to full grocery</li><li>8 TB/day multi-sensor pipeline training detection, tracking, and pose models</li><li>Pick-tracking sensor fusion driven to 99.2%</li><li>&ldquo;Ghost store&rdquo; simulation lab to validate models before deployment</li><li>20+ hardware deployments productized; qualified the Amazon One palm scanner</li></ul></figcaption>
+          <figcaption><span class="label">Go &middot; Just Walk Out</span>Founding member of the vision sensor platform team. Flagship grocery store launched in 10 months; pick-tracking sensor fusion at 99.2%.</figcaption>
         </figure>
         <figure>
           <svg viewBox="0 0 360 220" role="img" aria-label="Pack cell: a six-axis arm placing an item into a box on a conveyor, inside a dashed safety envelope">
@@ -298,7 +295,7 @@ a:hover{color:var(--copper)}
           <g class="s bg"><circle cx="260" cy="172" r="4"/><circle cx="250" cy="108" r="4"/><circle cx="198" cy="92" r="4"/></g>
           <rect class="cu" x="176" y="120" width="16" height="12"/>
         </svg>
-          <figcaption><span class="label">Robotics &middot; packing</span>Drove the automated packing cell and multi-robot fleet from pilot to production.<ul class="pts"><li>Won $86M in scaling funding with an SVP-briefed business case</li><li>6-DoF tote-handling arm from concept to production: +38% throughput, zero drops, on lines shared with people</li><li>Built the validation program, hardware-in-the-loop and on-floor: 99.82% uptime at ramp</li><li>Architected a six-camera 3D vision array: +20% dimensioning accuracy</li></ul></figcaption>
+          <figcaption><span class="label">Robotics &middot; packing</span>Packing cells and robot fleet from pilot to production, and a 6-DoF tote-handling arm from concept to production with +38% throughput.</figcaption>
         </figure>
       </div>
       <div class="lrow">
@@ -314,7 +311,7 @@ a:hover{color:var(--copper)}
           <g class="s bg"><circle cx="78" cy="174" r="18"/><circle cx="122" cy="174" r="18"/><circle cx="276" cy="174" r="18"/></g>
           <g class="s"><circle cx="78" cy="174" r="5"/><circle cx="122" cy="174" r="5"/><circle cx="276" cy="174" r="5"/></g>
         </svg>
-          <figcaption><span class="label">Commercial vehicles</span>Vehicle control systems for on-highway diesel platforms.<ul class="pts"><li>Specified and integrated electronic control systems for Kenworth and Peterbilt trucks</li><li>Cummins ISX, ISB, and related powertrains</li><li>Supported global OEM new-product launches</li></ul></figcaption>
+          <figcaption><span class="label">Commercial vehicles</span>Electronic control systems for on-highway diesel platforms: Kenworth and Peterbilt trucks on ISX and ISB powertrains.</figcaption>
         </figure>
       </div>
     </div>
@@ -419,10 +416,10 @@ a:hover{color:var(--copper)}
       </figure>
     </div>
     <ul class="mef-b">
-      <li><p class="label">Vehicle</p><p>Engineered pressure housings and variable buoyancy, sized for deep, long, cold dives.</p></li>
-      <li><p class="label">Navigation</p><p>GPS-denied state estimation: sonar and DVL-aided localization with IMU and depth fusion, and station-keeping in turbid water.</p></li>
-      <li><p class="label">Edge AI</p><p>Detection and segmentation running on the vehicle on Jetson-class compute, fully disconnected, with no cloud link.</p></li>
-      <li><p class="label">Data loop</p><p>Cloud training pipeline feeding the edge, with model updates between dives.</p></li>
+      <li><p class="label">Vehicle</p><p>Vehicle and pressure-system development for deep, long, cold dives.</p></li>
+      <li><p class="label">Buoyancy</p><p>Variable-buoyancy systems for persistent underwater operation.</p></li>
+      <li><p class="label">Perception</p><p>Edge perception running on the vehicle.</p></li>
+      <li><p class="label">Inspection</p><p>AI-enabled inspection at lower cost than crewed operations.</p></li>
     </ul>
     <p class="market"><span class="m">~$4.1B</span><span>Estimated offshore AUV and ROV market, 2026. Market context only.</span><span class="label">Mordor Intelligence</span></p>
   </div>
@@ -461,7 +458,6 @@ a:hover{color:var(--copper)}
       </figure>
       <div class="ip">
         <div><p class="label">Edge compute</p><p class="t">Jetson Orin nodes running ROS 2 for perception and latency experiments.</p></div>
-        <div><p class="label">Stack</p><p class="t">ROS 2, PX4, CAN bus, LiDAR, depth and vision, Jetson.</p></div>
         <div><p class="label">Patents</p><p class="t">3 granted, more pending, in machine vision, sensor fusion, and robotics.</p></div>
       </div>
     </div>
