@@ -48,7 +48,7 @@ a:hover{color:var(--copper)}
 .top .label{color:var(--on-deep-2)}
 .mast{display:flex;justify-content:space-between;align-items:baseline;padding-block:1.4rem;border-bottom:1px solid var(--deep-rule)}
 .mast a{text-decoration:none}
-.hero{row-gap:2.5rem;align-items:center;padding-block:clamp(3.5rem,9vw,7rem) clamp(2.5rem,6vw,4.5rem)}
+.hero{row-gap:2.5rem;align-items:center;padding-block:clamp(3.5rem,9vw,7rem)}
 .hero-text{grid-column:1/7}
 .hero h1{font-size:clamp(3rem,8vw,6.5rem);line-height:.92;letter-spacing:-.035em}
 .role{margin-top:1.25rem;font-size:1rem;color:var(--on-deep)}
@@ -60,17 +60,23 @@ a:hover{color:var(--copper)}
 .cta a:last-child{align-self:center}
 .hero-img{grid-column:7/13}
 .hero-img img{width:112%;max-width:none;height:auto;margin-left:-6%}
-.snap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--deep-rule)}
-.snap>div{padding:1.4rem 1.25rem 1.75rem 0}
-.snap>div+div{padding-left:1.25rem;border-left:1px solid var(--deep-rule)}
-.snap dd{margin-top:.5rem;font-family:var(--serif);font-size:1.35rem;line-height:1.2}
-.snap small{display:block;margin-top:.35rem;font:400 .78rem/1.3 var(--sans);color:var(--on-deep-2)}
 
-.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:clamp(2rem,5vw,3rem);border-top:2px solid var(--ink)}
-.cols>div{padding:1.5rem 1.5rem 0 0}
-.cols>div+div{padding-left:1.5rem;border-left:1px solid var(--rule)}
-.cols p:last-child{margin-top:.6rem;color:var(--ink-2);max-width:24em}
-.cols .status{color:var(--copper)}
+.mef{background:var(--deep);color:var(--on-deep)}
+.mef .kicker{color:var(--copper-l)}
+.mef .label{color:var(--on-deep-2)}
+.mef a{text-decoration-color:var(--copper-l)}
+.mef a:hover{color:var(--copper-l)}
+.mef-g{row-gap:2.5rem;align-items:end}
+.mef-t{grid-column:1/8}
+.mef h2{font-size:clamp(3.2rem,9vw,7rem);line-height:.88;letter-spacing:-.04em}
+.mef .lead{margin-top:1.75rem;max-width:32em;font-family:var(--serif);font-size:clamp(1.2rem,2vw,1.5rem);line-height:1.35}
+.mef .go{margin-top:1.5rem}
+.mef-d{grid-column:9/13}
+.mef-d dl{margin-top:.9rem}
+.mef-d dl div{padding-block:.9rem;border-top:1px solid var(--deep-rule)}
+.mef-d dt{font-family:var(--serif);font-size:2.4rem;line-height:1}
+.mef-d dd{margin-top:.4rem;font-size:.88rem;color:var(--on-deep-2)}
+.status{padding-top:.9rem;border-top:1px solid var(--deep-rule);font-size:.88rem;color:var(--on-deep-2)}
 
 .fit{background:var(--paper-2);border-block:1px solid var(--rule)}
 .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:clamp(2rem,5vw,3rem);border-top:2px solid var(--ink)}
@@ -106,7 +112,7 @@ a:hover{color:var(--copper)}
 .vign .bg{fill:var(--paper)}
 .vign .cone path{fill:var(--copper);fill-opacity:.07;stroke:var(--copper);stroke-width:1;stroke-dasharray:3 4}
 
-.bench{border-top:1px solid var(--rule)}
+.bench{}
 .shelf{align-items:end;margin-top:clamp(2rem,5vw,3rem);padding-bottom:1.25rem;border-bottom:1px solid var(--ink)}
 .shelf img{width:100%;height:auto}
 .b601{grid-column:1/6}
@@ -134,10 +140,6 @@ a:hover{color:var(--copper)}
 
 @media (max-width:980px){
   .hero-text{grid-column:1/8}.hero-img{grid-column:8/13}
-  .snap{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .snap>div,.snap>div+div{padding:1.25rem 1rem 1.5rem 0;border-left:0}
-  .snap>div:nth-child(even){padding-left:1rem;border-left:1px solid var(--deep-rule)}
-  .snap>div:nth-child(n+3){border-top:1px solid var(--deep-rule)}
   .cards{grid-template-columns:1fr}
   .cards li,.cards li:nth-child(even){padding:1.5rem 0 1.75rem;border-left:0}
   .vign{grid-template-columns:1fr;gap:1.5rem}
@@ -148,9 +150,7 @@ a:hover{color:var(--copper)}
   .hero-text,.hero-img{grid-column:1/-1}
   .hero-img{order:-1}
   .hero-img img{width:100%;margin:0}
-  .cols{grid-template-columns:1fr}
-  .cols>div,.cols>div+div{padding:1.25rem 0;border-left:0}
-  .cols>div+div{border-top:1px solid var(--rule)}
+  .mef-t,.mef-d{grid-column:1/-1}
   .b601{grid-column:1/9}.yah{grid-column:9/13;padding-bottom:0}
   .ip,.cap-a,.cap-b{grid-column:1/-1}
   .ip{margin-top:2rem}
@@ -162,11 +162,6 @@ a:hover{color:var(--copper)}
   .also ul{flex-direction:column}
   .also li:not(:last-child)::after{content:none}
   .also li+li{padding-top:.4rem;border-top:1px solid var(--rule)}
-}
-@media (max-width:480px){
-  .snap{grid-template-columns:1fr}
-  .snap>div,.snap>div:nth-child(even){padding-left:0;border-left:0}
-  .snap>div+div{border-top:1px solid var(--deep-rule)}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
@@ -184,41 +179,23 @@ a:hover{color:var(--copper)}
 <section class="wrap" aria-labelledby="name">
   <div class="grid hero">
     <div class="hero-text">
-      <p class="kicker">Founder profile</p>
+      <p class="kicker">Profile</p>
       <h1 id="name">Stavan Dholakia</h1>
       <p class="role">Co-founder and Technical Lead, Mefferdi <span>&middot; Seattle, Washington</span></p>
-      <p class="thesis">Building subsea vehicles that make underwater inspection cheaper and longer-running. Fifteen years taking robots and infrastructure from pilot to fleet scale.</p>
+      <p class="thesis">Fifteen years taking robots, perception systems, and infrastructure from pilot to production. Now building subsea vehicles at Mefferdi.</p>
       <p class="cta"><!--email_off--><a href="mailto:stavand@ieee.org">Email me</a><!--email_on--><a href="https://mefferdi.com" rel="noopener">mefferdi.com</a></p>
     </div>
     <figure class="hero-img">
       <img src="/assets/mefferdi-vehicle.webp" alt="Mefferdi subsea vehicle with twin hulls, thrusters, lights, and camera housings" width="1355" height="1087" decoding="async" fetchpriority="high">
     </figure>
   </div>
-  <dl class="snap" aria-label="Mefferdi at a glance">
-    <div><dt class="label">Stage</dt><dd>Prototype vehicles in testing</dd></div>
-    <div><dt class="label">Design targets</dt><dd>1,000 m depth<small>Missions up to 16 h in near-freezing water</small></dd></div>
-    <div><dt class="label">Market</dt><dd>~$4.1B<small>Offshore AUV and ROV, 2026 estimate, Mordor Intelligence</small></dd></div>
-    <div><dt class="label">Team</dt><dd>Four countries<small>Vehicle, pressure, buoyancy, perception</small></dd></div>
-  </dl>
 </section>
 </div>
 
-<section class="sec" id="mefferdi" aria-labelledby="co-h">
-  <div class="wrap">
-    <p class="kicker">01 / The company</p>
-    <h2 id="co-h">Mefferdi builds the vehicles and systems for persistent underwater inspection.</h2>
-    <div class="cols">
-      <div><p class="label">Thesis</p><p>Subsea inspection still leans on support vessels, crews, and short dives, so it happens less often than it should.</p></div>
-      <div><p class="label">Product</p><p>Subsea vehicles with engineered pressure systems, variable buoyancy, and on-board perception for AI-enabled inspection.</p></div>
-      <div><p class="label">Status</p><p>Vehicles and subsystems are built and in testing. Autonomy is in development. Depth and endurance are design targets, not field results.</p></div>
-    </div>
-  </div>
-</section>
-
 <section class="sec fit" aria-labelledby="fit-h">
   <div class="wrap">
-    <p class="kicker">02 / Founder fit</p>
-    <h2 id="fit-h">Why I can build this</h2>
+    <p class="kicker">01 / Proof</p>
+    <h2 id="fit-h">What I have delivered</h2>
     <ul class="cards">
       <li><svg class="gl" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 40h16M16 40V30l10-12 12 4"/><circle cx="16" cy="30" r="2.5"/><circle cx="26" cy="18" r="2.5"/><path d="M38 22l4-4M38 22l4 4" stroke="#A2502A"/></g></svg><div><p class="big">43 sites</p><h3>Robots into production</h3><p>Took Amazon&rsquo;s pack-automation robots from pilot cell to 43 production sites across North America and Europe, after leading functional-safety testing for its mobile robots.</p></div></li>
       <li><svg class="gl" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="24" r="5"/><path d="M15 21l25-11M15 27l25 11"/><circle cx="32" cy="20" r="1.2" stroke="#A2502A"/><circle cx="36" cy="27" r="1.2" stroke="#A2502A"/><circle cx="29" cy="30" r="1.2" stroke="#A2502A"/></g></svg><div><p class="big">Founding team</p><h3>Perception that ships</h3><p>Computer vision and sensor fusion for Amazon Go&rsquo;s checkout-free stores.</p></div></li>
@@ -230,7 +207,7 @@ a:hover{color:var(--copper)}
 
 <section class="sec" aria-labelledby="tr-h">
   <div class="wrap">
-    <p class="kicker">03 / Track record</p>
+    <p class="kicker">02 / Track record</p>
     <h2 id="tr-h" class="pull">Pilots are cheap. Site twelve is where you learn what you actually built.</h2>
     <div class="tl" role="img" aria-label="Career timeline: Cummins 2011 to 2015; Amazon 2015 to 2022, covering robotics safety, Amazon Go, and pack automation; Azure infrastructure 2022 to now; Mefferdi now">
       <div class="tl-row"><p class="who">Cummins<span>Vehicle electronics</span></p><div class="track"><span class="bar alt" style="--s:3.1%;--e:30.9%"></span></div></div>
@@ -288,6 +265,27 @@ a:hover{color:var(--copper)}
   </div>
 </section>
 
+<section class="sec mef" id="mefferdi" aria-labelledby="co-h">
+  <div class="wrap">
+    <p class="kicker">03 / Now</p>
+    <div class="grid mef-g">
+      <div class="mef-t">
+        <h2 id="co-h">Mefferdi</h2>
+        <p class="lead">I co-founded Mefferdi and lead its technical work: subsea vehicles with engineered pressure systems, variable buoyancy, and on-board perception for AI-enabled inspection. The team spans four countries.</p>
+        <p class="go"><a href="https://mefferdi.com" rel="noopener">mefferdi.com</a></p>
+      </div>
+      <div class="mef-d">
+        <p class="label">Design targets</p>
+        <dl>
+          <div><dt>1,000 m</dt><dd>Operating depth</dd></div>
+          <div><dt>Up to 16 h</dt><dd>Missions in near-freezing water</dd></div>
+        </dl>
+        <p class="status">Vehicles and subsystems are built and in testing. Autonomy is in development.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="sec bench" aria-labelledby="bench-h">
   <div class="wrap">
     <p class="kicker">04 / Hands-on</p>
@@ -321,7 +319,7 @@ a:hover{color:var(--copper)}
 
 <section class="wrap contact" id="contact" aria-labelledby="contact-h">
   <p class="kicker">06 / Contact</p>
-  <h2 id="contact-h">Investor and partner conversations welcome.</h2>
+  <h2 id="contact-h">Open to conversations with investors, partners, and builders.</h2>
   <!--email_off--><p class="mail"><a href="mailto:stavand@ieee.org">stavand@ieee.org</a></p><!--email_on-->
   <ul>
     <li><a href="tel:+12154100092">+1 215 410 0092</a></li>
