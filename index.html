@@ -12,7 +12,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231C2922'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' text-anchor='middle' fill='%23F3EFE7'%3ES%3C/text%3E%3C/svg%3E">
 <style>
 :root{
-  --paper:#F3EFE7;--ink:#1C2922;--ink-2:#4A564F;--rule:#D8D1C4;--copper:#A2502A;
+  --paper:#F3EFE7;--paper-2:#EBE6DB;--ink:#1C2922;--ink-2:#4A564F;--rule:#D8D1C4;--copper:#A2502A;
   --deep:#14241D;--deep-2:#1D3128;--deep-rule:#2F4339;--on-deep:#ECE7DD;--on-deep-2:#B9C2BB;--copper-l:#D9875C;
   --serif:"Iowan Old Style","Palatino Linotype","URW Palladio L",P052,Charter,"Bitstream Charter",Georgia,serif;
   --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
@@ -21,7 +21,7 @@
 }
 *,*::before,*::after{box-sizing:border-box}
 html{color-scheme:light;-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--sans);-webkit-font-smoothing:antialiased}
 img,svg{display:block;max-width:100%}
 h1,h2,h3{margin:0;font-family:var(--serif);font-weight:400;letter-spacing:-.015em}
 p,figure,ul,ol,dl,dd{margin:0}
@@ -31,446 +31,219 @@ a:hover{color:var(--copper)}
 :focus-visible{outline:2px solid var(--copper);outline-offset:3px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
 .skip{position:absolute;left:-999px;top:0}
-.skip:focus{left:16px;top:16px;z-index:10;padding:.5rem .75rem;background:var(--ink);color:var(--paper)}
+.skip:focus{left:16px;top:16px;z-index:10;padding:.5rem .75rem;background:var(--paper);color:var(--ink)}
 .wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
 .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:2rem}
-.kicker,.label{font:500 .72rem/1.2 var(--mono);letter-spacing:.16em;text-transform:uppercase}
-.kicker{display:flex;align-items:center;gap:.75rem;margin:0 0 1.75rem;color:var(--copper)}
+.kicker,.label{font:500 .72rem/1.3 var(--mono);letter-spacing:.16em;text-transform:uppercase}
+.kicker{display:flex;align-items:center;gap:.75rem;margin:0 0 1.5rem;color:var(--copper)}
 .kicker::after{content:"";flex:0 0 2.5rem;height:1px;background:currentColor}
 .label{color:var(--ink-2)}
-.sec{padding-block:clamp(4.5rem,10vw,8.5rem)}
+.sec{padding-block:clamp(4rem,9vw,7.5rem)}
+.sec h2{font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.05;max-width:18em}
 
-.mast{display:flex;justify-content:space-between;align-items:baseline;padding-block:1.4rem;border-bottom:1px solid var(--rule)}
+.top{background:var(--deep);color:var(--on-deep)}
+.top a{text-decoration-color:var(--copper-l)}
+.top a:hover{color:var(--copper-l)}
+.top .kicker{color:var(--copper-l)}
+.top .label{color:var(--on-deep-2)}
+.mast{display:flex;justify-content:space-between;align-items:baseline;padding-block:1.4rem;border-bottom:1px solid var(--deep-rule)}
 .mast a{text-decoration:none}
+.hero{row-gap:2.5rem;align-items:center;padding-block:clamp(3.5rem,9vw,7rem) clamp(2.5rem,6vw,4.5rem)}
+.hero-text{grid-column:1/7}
+.hero h1{font-size:clamp(3rem,8vw,6.5rem);line-height:.92;letter-spacing:-.035em}
+.role{margin-top:1.25rem;font-size:1rem;color:var(--on-deep)}
+.role span{color:var(--on-deep-2)}
+.thesis{margin-top:1.75rem;max-width:26em;font-family:var(--serif);font-size:clamp(1.3rem,2.2vw,1.7rem);line-height:1.3}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem 1.75rem;margin-top:2rem;font-size:.95rem}
+.cta a:first-child{padding:.7rem 1.1rem;background:var(--on-deep);color:var(--deep);text-decoration:none}
+.cta a:first-child:hover{background:var(--copper-l);color:var(--deep)}
+.cta a:last-child{align-self:center}
+.hero-img{grid-column:7/13}
+.hero-img img{width:112%;max-width:none;height:auto;margin-left:-6%}
+.snap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--deep-rule)}
+.snap>div{padding:1.4rem 1.25rem 1.75rem 0}
+.snap>div+div{padding-left:1.25rem;border-left:1px solid var(--deep-rule)}
+.snap dd{margin-top:.5rem;font-family:var(--serif);font-size:1.35rem;line-height:1.2}
+.snap small{display:block;margin-top:.35rem;font:400 .78rem/1.3 var(--sans);color:var(--on-deep-2)}
 
-.hero{padding-block:clamp(4.5rem,13vw,9.5rem) clamp(3.5rem,8vw,6rem)}
-.hero h1{font-size:clamp(3.1rem,11vw,8.25rem);line-height:.92;letter-spacing:-.035em}
-.hero-meta{row-gap:2rem;margin-top:clamp(2.5rem,6vw,4.5rem);padding-top:1.5rem;border-top:1px solid var(--ink)}
-.roles{grid-column:1/6;font-size:.95rem;line-height:1.5}
-.roles li+li{margin-top:.3rem}
-.roles li:last-child{color:var(--ink-2)}
-.lede{grid-column:7/13;font-family:var(--serif);font-size:clamp(1.35rem,2.4vw,1.85rem);line-height:1.32}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:clamp(2rem,5vw,3rem);border-top:2px solid var(--ink)}
+.cols>div{padding:1.5rem 1.5rem 0 0}
+.cols>div+div{padding-left:1.5rem;border-left:1px solid var(--rule)}
+.cols p:last-child{margin-top:.6rem;color:var(--ink-2);max-width:24em}
+.cols .status{color:var(--copper)}
 
-.now{padding-bottom:clamp(3rem,6vw,4.5rem)}
-.now .grid{row-gap:2.25rem;align-items:start}
-.now h2{grid-column:1/9;font-size:clamp(1.7rem,3.4vw,2.6rem);line-height:1.08}
-.now .body{grid-column:1/7;max-width:34em;color:var(--ink-2)}
-.line{grid-column:9/13;grid-row:1/3;align-self:end}
-.line .label{margin-bottom:1rem}
-.line ol{border-left:1px solid var(--rule)}
-.line li{position:relative;padding:.5rem 0 .5rem 1.3rem;font-size:.92rem;color:var(--ink-2)}
-.line li::before{content:"";position:absolute;left:-4px;top:50%;width:7px;height:7px;margin-top:-3.5px;border:1px solid var(--ink-2);border-radius:50%;background:var(--paper)}
-.line li:last-child{color:var(--ink);font-weight:600}
-.line li:last-child::before{border-color:var(--copper);background:var(--copper)}
+.fit{background:var(--paper-2);border-block:1px solid var(--rule)}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:clamp(2rem,5vw,3rem);border-top:2px solid var(--ink)}
+.cards li{display:grid;grid-template-columns:3.25rem 1fr;column-gap:1.25rem;padding:1.75rem 2rem 2rem 0;border-bottom:1px solid var(--rule)}
+.cards li:nth-child(even){padding-left:2rem;padding-right:0;border-left:1px solid var(--rule)}
+.gl{width:3.25rem;height:3.25rem;color:var(--ink)}
+.cards .big{margin:0;color:var(--ink);font-family:var(--serif);font-size:clamp(2rem,3.6vw,2.8rem);line-height:1;letter-spacing:-.02em}
+.cards h3{margin-top:.6rem;font:600 .95rem/1.3 var(--sans);letter-spacing:0}
+.cards p{margin-top:.45rem;font-size:.95rem;line-height:1.5;color:var(--ink-2);max-width:30em}
 
-.ctd{padding-bottom:clamp(4rem,9vw,7.5rem)}
-.ctd figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 2rem;padding-top:1rem;border-top:1px solid var(--ink);font-size:.92rem;color:var(--ink-2)}
-.ctd figcaption .label{color:var(--copper)}
-.ctd-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-top:1.5rem}
-.ctd svg{width:100%;min-width:860px;height:auto}
-.ctd .s{fill:none;stroke:var(--ink);stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
-.ctd .hair{fill:none;stroke:var(--rule);stroke-width:1}
-.ctd .cu{fill:var(--copper)}
-.ctd .bg{fill:var(--paper)}
-.ctd text{font-family:var(--mono);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;fill:var(--ink-2)}
-.ctd text .ix{fill:var(--copper)}
-.flow{fill:none;stroke:var(--copper);stroke-width:1.75;stroke-dasharray:4 6;animation:flow 1.4s linear infinite}
-@keyframes flow{to{stroke-dashoffset:-20}}
-
-.scale{padding-block:clamp(4.5rem,10vw,8rem);background:#EDE8DE;border-block:1px solid var(--rule)}
-.scale h2{font-size:clamp(2.1rem,5vw,4rem);line-height:1.02;font-style:italic;max-width:12em}
-.ruler{position:relative;height:3rem;margin:clamp(2.75rem,6vw,4.25rem) 0 0}
-.ruler::before{content:"";position:absolute;left:0;right:0;top:1rem;height:1px;background:var(--ink)}
-.ruler .t{position:absolute;left:var(--x);top:.6rem;padding-top:1.15rem;transform:translateX(-50%);font:500 .7rem/1 var(--mono);letter-spacing:.06em;color:var(--ink-2);white-space:nowrap}
-.ruler .t::before{content:"";position:absolute;left:50%;top:0;width:1px;height:.8rem;background:var(--ink)}
-.ruler .t:first-of-type{transform:none}
-.ruler .t:first-of-type::before{left:0}
-.ruler .t:last-of-type{transform:translateX(-100%)}
-.ruler .t:last-of-type::before{left:auto;right:0}
-.ruler .band{position:absolute;left:82.5%;width:10%;top:.72rem;height:.56rem;background:var(--copper)}
-.ruler .dot{position:absolute;left:66.3%;top:1rem;width:.85rem;height:.85rem;margin:-.425rem 0 0 -.425rem;border:2px solid var(--copper);border-radius:50%;background:#EDE8DE}
-.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:1.5rem;border-top:2px solid var(--ink)}
-.metrics>div{padding:1.6rem 1.5rem 2rem 0}
-.metrics>div+div{padding-left:1.5rem;border-left:1px solid var(--rule)}
-.metrics dt{display:flex;flex-direction:column;gap:1.1rem}
-.mk{display:flex;align-items:center;height:1.25rem}
-.mk .b{width:2.25rem;height:.56rem;background:var(--copper)}
-.mk .d{width:.85rem;height:.85rem;border:2px solid var(--copper);border-radius:50%}
-.mk svg{height:1.1rem;width:auto}
-.n{font-family:var(--serif);font-size:clamp(2.3rem,3.8vw,3.2rem);line-height:1;letter-spacing:-.025em}
-.n small{margin-left:.3em;font:500 .3em/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;vertical-align:.55em}
-.n2{margin-top:-.5rem;font-family:var(--serif);font-size:1.35rem;line-height:1}
-.metrics dd{margin-top:1rem;max-width:22em;font-size:.93rem;line-height:1.45;color:var(--ink-2)}
-
-.pull{position:relative;max-width:16em;font-size:clamp(1.9rem,4.3vw,3.3rem);line-height:1.08;font-style:italic}
+.pull{position:relative;max-width:16em;font-style:italic}
 .pull::before{content:"\201C";position:absolute;left:-.48em;top:-.05em;color:var(--copper)}
-.before-lede{margin-top:1.25rem;color:var(--ink-2)}
-.vign{display:grid;grid-template-columns:2fr 1fr;gap:2rem;margin-top:clamp(2.5rem,6vw,4rem)}
-.vg-amzn{display:grid;grid-template-columns:1fr 1fr;column-gap:2rem;align-content:start}
-.vg-h{grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;padding:.75rem 0;border-top:2px solid var(--ink);border-bottom:1px solid var(--rule);font-size:1.35rem}
-.vg-h span{font:500 .7rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
-.vign figure{padding-top:1.5rem}
+.tl{margin-top:clamp(2.5rem,6vw,4rem)}
+.tl-row{display:grid;grid-template-columns:13rem 1fr;align-items:center;column-gap:1.5rem;padding-block:.7rem;border-bottom:1px solid var(--rule)}
+.tl-row .who{font-size:.95rem}
+.tl-row .who span{display:block;font:500 .66rem/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.track{position:relative;height:1.6rem}
+.bar{position:absolute;top:.3rem;bottom:.3rem;left:var(--s);width:calc(var(--e) - var(--s));background:var(--ink)}
+.bar.alt{background:#5B6B62}
+.bar.cu{background:var(--copper)}
+.bar em{position:absolute;left:.5rem;top:50%;transform:translateY(-50%);font:500 .62rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--paper);font-style:normal;white-space:nowrap}
+.now{position:absolute;top:.35rem;left:var(--s);width:.9rem;height:.9rem;margin-left:-.45rem;background:var(--copper);border-radius:50%}
+.axis{display:grid;grid-template-columns:13rem 1fr;column-gap:1.5rem;padding-top:.6rem}
+.axis .track{height:1rem;font:500 .66rem/1 var(--mono);color:var(--ink-2)}
+.axis .track span{position:absolute;left:var(--s);transform:translateX(-50%)}
+.vign{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;margin-top:clamp(2.5rem,5vw,3.5rem)}
 .vign svg{width:100%;height:auto}
-.vign figcaption{margin-top:1rem;font-size:.92rem;line-height:1.45;color:var(--ink-2)}
-.vign figcaption .label{display:block;margin-bottom:.35rem;color:var(--ink)}
+.vign figcaption{margin-top:.8rem;font-size:.9rem;line-height:1.45;color:var(--ink-2)}
+.vign figcaption .label{display:block;margin-bottom:.3rem;color:var(--ink)}
 .vign .s{fill:none;stroke:var(--ink);stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
 .vign .hair{fill:none;stroke:var(--rule);stroke-width:1}
 .vign .cu{fill:var(--copper)}
 .vign .bg{fill:var(--paper)}
 .vign .cone path{fill:var(--copper);fill-opacity:.07;stroke:var(--copper);stroke-width:1;stroke-dasharray:3 4}
 
-.kit{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:clamp(2rem,5vw,3rem);border-top:2px solid var(--ink)}
-.kit li{padding:1.75rem 1.5rem 2rem 0;border-bottom:1px solid var(--rule)}
-.kit li:not(:nth-child(3n+1)){padding-left:1.5rem;border-left:1px solid var(--rule)}
-.kit .gl{width:3.5rem;height:3.5rem;color:var(--ink)}
-.kit h3{margin-top:1rem;font-size:1.45rem;line-height:1.15}
-.kit p{margin-top:.6rem;font-size:.93rem;line-height:1.45;color:var(--ink-2);max-width:24em}
-.kit .proof{margin-top:.9rem;font:500 .68rem/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--copper)}
-.toolkit h2{font-size:clamp(2.1rem,4.8vw,3.75rem);line-height:1.03}
-
-.mef{padding-block:clamp(4.5rem,10vw,8.5rem);background:var(--deep);color:var(--on-deep)}
-.mef .kicker{color:var(--copper-l)}
-.mef .label{color:var(--on-deep-2)}
-.mef a{text-decoration-color:var(--copper-l)}
-.mef a:hover{color:var(--copper-l)}
-.mef-head{row-gap:1.5rem;align-items:end;margin-bottom:clamp(2.5rem,6vw,4rem)}
-.mef h2{grid-column:1/8;font-size:clamp(3.6rem,12.5vw,10rem);line-height:.84;letter-spacing:-.045em}
-.mef-dek{grid-column:8/13;font-family:var(--serif);font-size:clamp(1.25rem,2vw,1.55rem);line-height:1.3;color:var(--on-deep-2)}
-.mef-grid{row-gap:2.5rem;align-items:start}
-.mef-photo{grid-column:1/9;grid-row:1/3;margin-left:-2%}
-.mef-photo img{width:100%;height:auto}
-.mef-copy{grid-column:9/13}
-.mef-copy p{max-width:30em}
-.mef-copy p+p{margin-top:1.25rem}
-.mef-targets{grid-column:9/13;align-self:end}
-.mef-targets dl{margin-top:.9rem}
-.mef-targets dl div{padding-block:.9rem;border-top:1px solid var(--deep-rule)}
-.mef-targets dt{font-family:var(--serif);font-size:2.5rem;line-height:1;letter-spacing:-.02em}
-.mef-targets dd{margin-top:.4rem;font-size:.88rem;color:var(--on-deep-2)}
-.status{padding-top:.9rem;border-top:1px solid var(--deep-rule);font-size:.88rem;color:var(--on-deep-2)}
-.market{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem 1.5rem;margin-top:clamp(3rem,6vw,4.5rem);padding-top:1.25rem;border-top:1px solid var(--deep-rule);font-size:.9rem;color:var(--on-deep-2)}
-.market .m{font-family:var(--serif);font-size:2rem;line-height:1;color:var(--copper-l)}
-
-.bench h2{font-size:clamp(2.1rem,4.8vw,3.75rem);line-height:1.03;margin-bottom:clamp(2rem,5vw,3.5rem)}
-.shelf{align-items:end;padding-bottom:1.25rem;border-bottom:1px solid var(--ink)}
+.bench{border-top:1px solid var(--rule)}
+.shelf{align-items:end;margin-top:clamp(2rem,5vw,3rem);padding-bottom:1.25rem;border-bottom:1px solid var(--ink)}
 .shelf img{width:100%;height:auto}
-.b601{grid-column:2/8}
-.yah{grid-column:9/12;padding-bottom:.5rem}
-.caps{row-gap:1.25rem;margin-top:1rem;font-size:.92rem;line-height:1.45;color:var(--ink-2)}
-.caps .label{display:block;margin-bottom:.35rem;color:var(--ink)}
-.cap-a{grid-column:2/8;max-width:26em}
-.cap-b{grid-column:9/13;max-width:22em}
-.note{max-width:34em;margin-top:clamp(2.5rem,5vw,3.5rem);padding:.25rem 0 .25rem 1.25rem;border-left:2px solid var(--copper)}
-.note p+p{margin-top:.5rem}
-.note .t{font-family:var(--serif);font-size:1.2rem;line-height:1.35}
-.note .meta{font:500 .72rem/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--copper)}
+.b601{grid-column:1/6}
+.yah{grid-column:6/9;padding-bottom:.5rem}
+.ip{grid-column:9/13;align-self:stretch;display:flex;flex-direction:column;justify-content:flex-end;gap:1.5rem}
+.ip>div{padding-left:1.1rem;border-left:2px solid var(--copper)}
+.ip .t{margin-top:.35rem;font-family:var(--serif);font-size:1.15rem;line-height:1.35}
+.ip .meta{margin-top:.35rem;font:500 .68rem/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--copper)}
+.caps{row-gap:1rem;margin-top:1rem;font-size:.9rem;line-height:1.45;color:var(--ink-2)}
+.caps .label{display:block;margin-bottom:.3rem;color:var(--ink)}
+.cap-a{grid-column:1/6}
+.cap-b{grid-column:6/9}
 
 .also{padding-block:2rem;border-block:1px solid var(--rule)}
 .also .kicker{margin-bottom:1rem}
 .also ul{display:flex;flex-wrap:wrap;gap:.4rem 0;font-size:.95rem}
 .also li:not(:last-child)::after{content:"\00B7";margin:0 .8rem;color:var(--copper)}
 
-.contact{padding-block:clamp(4.5rem,10vw,8rem) 3rem}
-.mail{font-family:var(--serif);font-size:clamp(2rem,7vw,5rem);line-height:1;letter-spacing:-.03em;overflow-wrap:anywhere}
+.contact{padding-block:clamp(4rem,9vw,7rem) 3rem}
+.contact h2{font-size:clamp(1.6rem,3vw,2.2rem);max-width:none}
+.mail{margin-top:1.25rem;font-family:var(--serif);font-size:clamp(2rem,7vw,5rem);line-height:1;letter-spacing:-.03em;overflow-wrap:anywhere}
 .mail a{text-decoration-thickness:2px;text-underline-offset:.14em}
-.contact ul{display:flex;flex-wrap:wrap;gap:.5rem 2.25rem;margin-top:2rem;font-size:1rem}
+.contact ul{display:flex;flex-wrap:wrap;gap:.5rem 2.25rem;margin-top:2rem}
 .foot{padding-block:2rem 2.5rem;font-size:.8rem;color:var(--ink-2)}
 
 @media (max-width:980px){
-  .metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .metrics>div,.metrics>div+div{padding:1.5rem 1.25rem 1.75rem 0;border-left:0}
-  .metrics>div:nth-child(even){padding-left:1.25rem;border-left:1px solid var(--rule)}
-  .metrics>div:nth-child(n+3){border-top:1px solid var(--rule)}
-  .mef-photo{grid-column:1/-1;grid-row:auto;margin-left:0}
-  .mef-copy{grid-column:1/7}
-  .mef-targets{grid-column:8/13}
-}
-@media (max-width:860px){
-  .kit{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .kit li,.kit li:not(:nth-child(3n+1)){padding:1.5rem 1.25rem 1.75rem 0;border-left:0}
-  .kit li:nth-child(even){padding-left:1.25rem;border-left:1px solid var(--rule)}
-  .vign,.vg-amzn{grid-template-columns:1fr;gap:0}
-  .vg+.vg{margin-top:2.5rem}
-  .vign figure+figure{margin-top:1rem;border-top:1px solid var(--rule)}
+  .hero-text{grid-column:1/8}.hero-img{grid-column:8/13}
+  .snap{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .snap>div,.snap>div+div{padding:1.25rem 1rem 1.5rem 0;border-left:0}
+  .snap>div:nth-child(even){padding-left:1rem;border-left:1px solid var(--deep-rule)}
+  .snap>div:nth-child(n+3){border-top:1px solid var(--deep-rule)}
+  .cards{grid-template-columns:1fr}
+  .cards li,.cards li:nth-child(even){padding:1.5rem 0 1.75rem;border-left:0}
+  .vign{grid-template-columns:1fr;gap:1.5rem}
   .vign svg{max-width:440px}
+  .tl-row,.axis{grid-template-columns:9rem 1fr}
 }
 @media (max-width:760px){
-  .roles,.lede,.now h2,.now .body,.line,.mef h2,.mef-dek,.mef-photo,.mef-copy,.mef-targets{grid-column:1/-1;grid-row:auto}
-  .mef-photo{margin-inline:calc(var(--gutter) * -.5)}
-  .b601{grid-column:1/9}
-  .yah{grid-column:9/13;padding-bottom:0}
-  .cap-a,.cap-b{grid-column:1/-1}
+  .hero-text,.hero-img{grid-column:1/-1}
+  .hero-img{order:-1}
+  .hero-img img{width:100%;margin:0}
+  .cols{grid-template-columns:1fr}
+  .cols>div,.cols>div+div{padding:1.25rem 0;border-left:0}
+  .cols>div+div{border-top:1px solid var(--rule)}
+  .b601{grid-column:1/9}.yah{grid-column:9/13;padding-bottom:0}
+  .ip,.cap-a,.cap-b{grid-column:1/-1}
+  .ip{margin-top:2rem}
+  .tl-row,.axis{grid-template-columns:1fr}
+  .axis .who-sp{display:none}
+  .tl-row .who{margin-bottom:.35rem}
   .pull::before{position:static}
+  .bar em{display:none}
   .also ul{flex-direction:column}
   .also li:not(:last-child)::after{content:none}
   .also li+li{padding-top:.4rem;border-top:1px solid var(--rule)}
 }
-@media (max-width:560px){
-  .kit{grid-template-columns:1fr}
-  .kit li,.kit li:nth-child(even){padding-left:0;border-left:0}
-  .metrics{grid-template-columns:1fr}
-  .metrics>div,.metrics>div+div,.metrics>div:nth-child(even){padding-left:0;border-left:0}
-  .metrics>div+div{border-top:1px solid var(--rule)}
+@media (max-width:480px){
+  .snap{grid-template-columns:1fr}
+  .snap>div,.snap>div:nth-child(even){padding-left:0;border-left:0}
+  .snap>div+div{border-top:1px solid var(--deep-rule)}
 }
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .flow{animation:none}
-}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
+<div class="top">
 <header class="wrap mast">
   <a class="label" href="/">stavan.io</a>
   <a class="label" href="#contact">Contact</a>
 </header>
 
 <main id="main">
+<section class="wrap" aria-labelledby="name">
+  <div class="grid hero">
+    <div class="hero-text">
+      <p class="kicker">Founder profile</p>
+      <h1 id="name">Stavan Dholakia</h1>
+      <p class="role">Co-founder and Technical Lead, Mefferdi <span>&middot; Seattle, Washington</span></p>
+      <p class="thesis">Building subsea vehicles that make underwater inspection cheaper and longer-running. Fifteen years taking robots and infrastructure from pilot to fleet scale.</p>
+      <p class="cta"><!--email_off--><a href="mailto:stavand@ieee.org">Email me</a><!--email_on--><a href="https://mefferdi.com" rel="noopener">mefferdi.com</a></p>
+    </div>
+    <figure class="hero-img">
+      <img src="/assets/mefferdi-vehicle.webp" alt="Mefferdi subsea vehicle with twin hulls, thrusters, lights, and camera housings" width="1355" height="1087" decoding="async" fetchpriority="high">
+    </figure>
+  </div>
+  <dl class="snap" aria-label="Mefferdi at a glance">
+    <div><dt class="label">Stage</dt><dd>Prototype vehicles in testing</dd></div>
+    <div><dt class="label">Design targets</dt><dd>1,000 m depth<small>Missions up to 16 h in near-freezing water</small></dd></div>
+    <div><dt class="label">Market</dt><dd>~$4.1B<small>Offshore AUV and ROV, 2026 estimate, Mordor Intelligence</small></dd></div>
+    <div><dt class="label">Team</dt><dd>Four countries<small>Vehicle, pressure, buoyancy, perception</small></dd></div>
+  </dl>
+</section>
+</div>
 
-<section class="wrap hero" aria-labelledby="name">
-  <h1 id="name">Stavan Dholakia</h1>
-  <div class="grid hero-meta">
-    <ul class="roles">
-      <li>Co-founder and Technical Lead, Mefferdi</li>
-      <li>Seattle, Washington</li>
-    </ul>
-    <p class="lede">Fifteen years building machines and the infrastructure behind them. Now I am taking them underwater.</p>
+<section class="sec" id="mefferdi" aria-labelledby="co-h">
+  <div class="wrap">
+    <p class="kicker">01 / The company</p>
+    <h2 id="co-h">Mefferdi builds the vehicles and systems for persistent underwater inspection.</h2>
+    <div class="cols">
+      <div><p class="label">Thesis</p><p>Subsea inspection still leans on support vessels, crews, and short dives, so it happens less often than it should.</p></div>
+      <div><p class="label">Product</p><p>Subsea vehicles with engineered pressure systems, variable buoyancy, and on-board perception for AI-enabled inspection.</p></div>
+      <div><p class="label">Status</p><p>Vehicles and subsystems are built and in testing. Autonomy is in development. Depth and endurance are design targets, not field results.</p></div>
+    </div>
   </div>
 </section>
 
-<section class="mef" id="mefferdi" aria-labelledby="mef-h">
+<section class="sec fit" aria-labelledby="fit-h">
   <div class="wrap">
-    <p class="kicker">01 / Ocean intelligence</p>
-    <div class="grid mef-head">
-      <h2 id="mef-h">Mefferdi</h2>
-      <p class="mef-dek">Subsea vehicles for inspection that costs less and stays down longer.</p>
-    </div>
-    <div class="grid mef-grid">
-      <figure class="mef-photo">
-        <img src="/assets/mefferdi-vehicle.webp" alt="Mefferdi subsea vehicle with twin hulls, thrusters, lights, and camera housings" width="1355" height="1114" decoding="async">
-      </figure>
-      <div class="mef-copy">
-        <p>I co-founded Mefferdi and lead its technical work: vehicle and pressure systems, variable buoyancy, and edge perception for AI-enabled inspection. The team spans four countries.</p>
-        <p><a href="https://mefferdi.com" rel="noopener">mefferdi.com</a></p>
-      </div>
-      <div class="mef-targets">
-        <p class="label">Design targets</p>
-        <dl>
-          <div><dt>1,000 m</dt><dd>Operating depth</dd></div>
-          <div><dt>Up to 16 h</dt><dd>Missions in near-freezing water</dd></div>
-        </dl>
-        <p class="status">Vehicles and subsystems exist and are in testing. Autonomy is in development.</p>
-      </div>
-    </div>
-    <aside class="market" aria-label="Market context">
-      <span class="m">~$4.1B</span>
-      <span>Estimated offshore AUV and ROV market, 2026. Market context only.</span>
-      <span class="label">Mordor Intelligence</span>
-    </aside>
-  </div>
-</section>
-
-<section class="sec toolkit" aria-labelledby="kit-h">
-  <div class="wrap">
-    <p class="kicker">02 / Toolkit</p>
-    <h2 id="kit-h">Where I am useful</h2>
-    <ul class="kit">
-      <li>
-        <svg class="gl" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="18" width="30" height="12" rx="6"/><circle cx="40" cy="24" r="4"/><path d="M6 38c4-3 8 3 12 0s8 3 12 0 8 3 12 0" stroke="#A2502A"/></g></svg>
-        <h3>Subsea systems</h3>
-        <p>Pressure housings, variable buoyancy, and vehicle integration for long, cold dives.</p>
-        <p class="proof">Mefferdi</p>
-      </li>
-      <li>
-        <svg class="gl" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="24" r="5"/><path d="M15 21l25-11M15 27l25 11"/><circle cx="32" cy="20" r="1.2" stroke="#A2502A"/><circle cx="36" cy="27" r="1.2" stroke="#A2502A"/><circle cx="29" cy="30" r="1.2" stroke="#A2502A"/></g></svg>
-        <h3>Perception</h3>
-        <p>Computer vision, sensor fusion, LiDAR mapping, and inference at the edge.</p>
-        <p class="proof">Amazon (Go) · Mefferdi</p>
-      </li>
-      <li>
-        <svg class="gl" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 40h16M16 40V30l10-12 12 4"/><circle cx="16" cy="30" r="2.5"/><circle cx="26" cy="18" r="2.5"/><path d="M38 22l4-4M38 22l4 4" stroke="#A2502A"/></g></svg>
-        <h3>Manipulation and control</h3>
-        <p>6-DoF manipulators in production; joint-level control over CAN bus at home.</p>
-        <p class="proof">Amazon (Robotics) · Garage</p>
-      </li>
-      <li>
-        <svg class="gl" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6l14 6v10c0 9-6 16-14 20-8-4-14-11-14-20V12z"/><path d="M18 24l4 4 8-9" stroke="#A2502A"/></g></svg>
-        <h3>Functional safety</h3>
-        <p>IEC 61508 practice on mobile robots, and safety guards for AI agents that act.</p>
-        <p class="proof">Amazon (Robotics) · TRiX</p>
-      </li>
-      <li>
-        <svg class="gl" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="13" y="13" width="22" height="22"/><rect x="19" y="19" width="10" height="10" stroke="#A2502A"/><path d="M18 13V7M24 13V7M30 13V7M18 41v-6M24 41v-6M30 41v-6M13 18H7M13 24H7M13 30H7M41 18h-6M41 24h-6M41 30h-6"/></g></svg>
-        <h3>AI infrastructure</h3>
-        <p>Arm server compute and frontier GPU capacity, from productization to deployment.</p>
-        <p class="proof">Azure</p>
-      </li>
-      <li>
-        <svg class="gl" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 32V20h14v-6h10l6 8h6v10"/><circle cx="14" cy="34" r="4"/><circle cx="34" cy="34" r="4"/><rect x="22" y="20" width="6" height="5" stroke="#A2502A"/></g></svg>
-        <h3>Vehicle electronics</h3>
-        <p>Heavy-truck controls and powertrain integration, where the machine pushes back.</p>
-        <p class="proof">Cummins</p>
-      </li>
+    <p class="kicker">02 / Founder fit</p>
+    <h2 id="fit-h">Why I can build this</h2>
+    <ul class="cards">
+      <li><svg class="gl" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 40h16M16 40V30l10-12 12 4"/><circle cx="16" cy="30" r="2.5"/><circle cx="26" cy="18" r="2.5"/><path d="M38 22l4-4M38 22l4 4" stroke="#A2502A"/></g></svg><div><p class="big">43 sites</p><h3>Robots into production</h3><p>Took Amazon&rsquo;s pack-automation robots from pilot cell to 43 production sites across North America and Europe, after leading functional-safety testing for its mobile robots.</p></div></li>
+      <li><svg class="gl" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="24" r="5"/><path d="M15 21l25-11M15 27l25 11"/><circle cx="32" cy="20" r="1.2" stroke="#A2502A"/><circle cx="36" cy="27" r="1.2" stroke="#A2502A"/><circle cx="29" cy="30" r="1.2" stroke="#A2502A"/></g></svg><div><p class="big">Founding team</p><h3>Perception that ships</h3><p>Computer vision and sensor fusion for Amazon Go&rsquo;s checkout-free stores.</p></div></li>
+      <li><svg class="gl" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="13" y="13" width="22" height="22"/><rect x="19" y="19" width="10" height="10" stroke="#A2502A"/><path d="M18 13V7M24 13V7M30 13V7M18 41v-6M24 41v-6M30 41v-6M13 18H7M13 24H7M13 30H7M41 18h-6M41 24h-6M41 30h-6"/></g></svg><div><p class="big">Multi-$B</p><h3>Operating scale</h3><p>Programs I led or materially shaped across cloud, AI capacity, and automation. One Azure program alone runs at ~$450M ARR. Execution across 40+ teams and ~200 people in North America, EMEA, and APAC.</p></div></li>
+      <li><svg class="gl" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 32V20h14v-6h10l6 8h6v10"/><circle cx="14" cy="34" r="4"/><circle cx="34" cy="34" r="4"/><rect x="22" y="20" width="6" height="5" stroke="#A2502A"/></g></svg><div><p class="big">15 years</p><h3>Hardware first</h3><p>Started on vehicle electronics for Kenworth and Peterbilt trucks and Cummins ISX and ISB powertrains. Every system since has had to survive the real world.</p></div></li>
     </ul>
   </div>
 </section>
 
-<section class="sec bench" id="workbench" aria-labelledby="bench-h">
+<section class="sec" aria-labelledby="tr-h">
   <div class="wrap">
-    <p class="kicker">03 / Workbench</p>
-    <h2 id="bench-h">The garage</h2>
-    <div class="grid shelf">
-      <figure class="b601">
-        <img src="/assets/b601-arm.webp" alt="B601 robotic arm with its gripper extended" width="976" height="947" loading="lazy" decoding="async">
-      </figure>
-      <figure class="yah">
-        <img src="/assets/yahboom-rover.webp" alt="Yahboom mecanum-wheel rover seen from above" width="406" height="482" loading="lazy" decoding="async">
-      </figure>
+    <p class="kicker">03 / Track record</p>
+    <h2 id="tr-h" class="pull">Pilots are cheap. Site twelve is where you learn what you actually built.</h2>
+    <div class="tl" role="img" aria-label="Career timeline: Cummins 2011 to 2015; Amazon 2015 to 2022, covering robotics safety, Amazon Go, and pack automation; Azure infrastructure 2022 to now; Mefferdi now">
+      <div class="tl-row"><p class="who">Cummins<span>Vehicle electronics</span></p><div class="track"><span class="bar alt" style="--s:3.1%;--e:30.9%"></span></div></div>
+      <div class="tl-row"><p class="who">Amazon<span>Robotics &middot; Go &middot; Robotics</span></p><div class="track">
+        <span class="bar" style="--s:30.9%;--e:43.8%"><em>Safety</em></span>
+        <span class="bar alt" style="--s:43.9%;--e:56.2%"><em>Go</em></span>
+        <span class="bar" style="--s:56.4%;--e:70.0%"><em>Pack</em></span></div></div>
+      <div class="tl-row"><p class="who">Azure<span>AI infrastructure</span></p><div class="track"><span class="bar alt" style="--s:70.0%;--e:99.1%"></span></div></div>
+      <div class="tl-row"><p class="who">Mefferdi<span>Co-founder</span></p><div class="track"><span class="now" style="--s:99.1%"></span></div></div>
+      <div class="axis"><span class="who-sp"></span><div class="track"><span style="--s:6.2%">2012</span><span style="--s:31.2%">2016</span><span style="--s:56.2%">2020</span><span style="--s:81.2%">2024</span></div></div>
     </div>
-    <div class="grid caps">
-      <p class="cap-a"><span class="label">B601 arm</span>CAN-bus motors, custom joint-level control at 200 Hz. A manipulation and safety testbed.</p>
-      <p class="cap-b"><span class="label">Yahboom rover</span>LiDAR mapping, perception, and autonomy experiments.</p>
-    </div>
-    <aside class="note" aria-label="Research note">
-      <p class="label">Research note</p>
-      <p class="t">TRiX explores neuro-symbolic safety for foundation-model agents in robotic disassembly.</p>
-      <p class="meta">Manuscript under review</p>
-    </aside>
-  </div>
-</section>
-
-<section class="scale" aria-labelledby="scale-h">
-  <div class="wrap">
-    <p class="kicker">04 / Scale</p>
-    <h2 id="scale-h">What I tap dance to every day</h2>
-    <div class="ruler" role="img" aria-label="Logarithmic dollar scale from one million to ten billion, marking about 450 million and a band in the low billions">
-      <span class="band"></span><span class="dot"></span>
-      <span class="t" style="--x:0%">$1M</span>
-      <span class="t" style="--x:25%">$10M</span>
-      <span class="t" style="--x:50%">$100M</span>
-      <span class="t" style="--x:75%">$1B</span>
-      <span class="t" style="--x:100%">$10B</span>
-    </div>
-    <dl class="metrics">
-      <div>
-        <dt><span class="mk" aria-hidden="true"><span class="b"></span></span><span class="n">Multi-$B</span></dt>
-        <dd>Infrastructure and commerce impact of programs I led or materially shaped, across cloud, AI capacity, and automation.</dd>
-      </div>
-      <div>
-        <dt><span class="mk" aria-hidden="true"><span class="d"></span></span><span class="n">~$450M<small>ARR</small></span></dt>
-        <dd>One revenue-bearing Azure program, not my whole portfolio.</dd>
-      </div>
-      <div>
-        <dt>
-          <span class="mk" aria-hidden="true"><svg viewBox="0 0 200 20"><defs><pattern id="sq" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="7" height="7" fill="#1C2922"/></pattern></defs><rect width="200" height="20" fill="url(#sq)"/></svg></span>
-          <span class="n">40+<small>teams</small></span>
-          <span class="n2">~200 people</span>
-        </dt>
-        <dd>Hardware, software, infrastructure, supply chain, operations, and commercial teams across North America, EMEA, and APAC.</dd>
-      </div>
-      <div>
-        <dt><span class="mk" aria-hidden="true"><svg viewBox="0 0 258 20"><defs><pattern id="tk" width="6" height="20" patternUnits="userSpaceOnUse"><rect width="1.5" height="20" fill="#A2502A"/></pattern></defs><rect width="258" height="20" fill="url(#tk)"/></svg></span><span class="n">43<small>sites</small></span></dt>
-        <dd>Amazon robotics deployments across North America and Europe.</dd>
-      </div>
-    </dl>
-  </div>
-</section>
-
-<section class="sec now" aria-labelledby="now-h">
-  <div class="wrap">
-    <p class="kicker">05 / Infrastructure</p>
-    <div class="grid">
-      <h2 id="now-h">Silicon is not a product until someone can buy it.</h2>
-      <p class="body">At Microsoft I work across Azure Cobalt, Microsoft&rsquo;s first-party Arm server platform, and NVIDIA GB200 and GB300-class GPU infrastructure: productization, capacity, deployment, adoption, and commercial execution. I shipped Cobalt 100. Now I work across the next Cobalt generation and frontier GPU fleets.</p>
-      <aside class="line" aria-labelledby="rl">
-        <p class="label" id="rl">Reporting line</p>
-        <ol>
-          <li>Chief Executive Officer</li>
-          <li>Executive Vice President</li>
-          <li>General Manager, Cloud Operations</li>
-          <li>Stavan</li>
-        </ol>
-      </aside>
-    </div>
-  </div>
-</section>
-
-<figure class="wrap ctd">
-  <figcaption><span class="label">Fig. 1 &middot; Cloud to doorstep</span><span>Each stage from rack to truck is a system I have worked on.</span></figcaption>
-  <div class="ctd-scroll" tabindex="0" role="region" aria-label="Cloud to doorstep illustration">
-    <svg viewBox="0 0 1200 350" role="img" aria-labelledby="ctd-t ctd-d">
-      <title id="ctd-t">Cloud to doorstep</title>
-      <desc id="ctd-d">An order moves from a customer's phone to an Azure region and its Arm and GPU racks, into a robotic fulfillment center, onto a truck, and to a customer's door.</desc>
-      <defs>
-        <pattern id="slots" width="26" height="12" patternUnits="userSpaceOnUse"><path d="M5 6h16" stroke="#1C2922" stroke-width="1"/></pattern>
-        <g id="rack"><rect width="26" height="150" fill="url(#slots)"/><rect width="26" height="150" fill="none" stroke="#1C2922" stroke-width="1.5"/></g>
-      </defs>
-
-      <path class="hair" d="M60 44H450M60 40v8M450 40v8M480 44H1160M480 40v8M1160 40v8"/>
-      <text x="60" y="30">Bits</text>
-      <text x="480" y="30">Atoms</text>
-      <path class="hair" d="M20 290H1180"/>
-
-      <rect class="s" x="68" y="196" width="44" height="80" rx="6"/>
-      <rect class="s" x="74" y="206" width="32" height="56"/>
-      <path d="M82 234l6 6 12-14" fill="none" stroke="#A2502A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-
-      <path class="s" d="M212 130C196 130 190 108 206 100C204 80 230 70 244 82C252 64 284 66 288 88C306 88 312 112 300 124C296 128 292 130 288 130Z"/>
-
-      <use href="#rack" x="338" y="140"/>
-      <use href="#rack" x="377" y="140"/>
-      <use href="#rack" x="416" y="140"/>
-      <rect x="416" y="140" width="26" height="150" fill="none" stroke="#A2502A" stroke-width="2"/>
-
-      <path class="s" d="M480 290V170L520 146V170L560 146V170L600 146V170L640 146V170L680 146V170L720 146V170H740V290"/>
-      <rect class="s" x="496" y="252" width="228" height="7"/>
-      <path class="s" d="M506 259V290M714 259V290"/>
-      <rect class="s" x="520" y="238" width="18" height="14"/>
-      <rect class="s" x="566" y="240" width="22" height="12"/>
-      <rect class="s" x="700" y="238" width="18" height="14"/>
-      <rect class="s" x="632" y="170" width="20" height="6"/>
-      <path class="s" d="M642 176L626 200L660 214M652 218h16M654 218v10M666 218v10"/>
-      <circle class="s bg" cx="626" cy="200" r="3.5"/>
-      <circle class="s bg" cx="660" cy="214" r="3.5"/>
-      <rect class="cu" x="651" y="228" width="18" height="14"/>
-
-      <rect class="s" x="770" y="186" width="172" height="84"/>
-      <path class="s" d="M782 196V260M942 270V196H966L974 222H1004Q1008 222 1008 228V270ZM948 202H962L968 222H948ZM946 196V176"/>
-      <g class="s bg">
-        <circle cx="796" cy="279" r="11"/><circle cx="822" cy="279" r="11"/>
-        <circle cx="954" cy="279" r="11"/><circle cx="990" cy="279" r="11"/>
-      </g>
-
-      <path class="s" d="M1062 290V222L1110 184L1158 222V290"/>
-      <rect class="s" x="1100" y="252" width="20" height="38"/>
-      <rect class="s" x="1072" y="236" width="18" height="16"/>
-      <rect class="cu" x="1126" y="276" width="14" height="14"/>
-
-      <path class="flow" d="M112 232C150 232 170 118 202 118M262 130C262 150 390 120 390 138M442 236H480M740 236H770M1008 250C1046 250 1062 272 1098 272"/>
-
-      <g text-anchor="middle">
-        <text x="90" y="328"><tspan class="ix">01</tspan> Order</text>
-        <text x="252" y="328"><tspan class="ix">02</tspan> Azure region</text>
-        <text x="390" y="328"><tspan class="ix">03</tspan> Arm + GPU racks</text>
-        <text x="610" y="328"><tspan class="ix">04</tspan> Robotic fulfillment</text>
-        <text x="889" y="328"><tspan class="ix">05</tspan> Line haul</text>
-        <text x="1110" y="328"><tspan class="ix">06</tspan> Doorstep</text>
-      </g>
-    </svg>
-  </div>
-</figure>
-
-<section class="sec before" aria-labelledby="before-h">
-  <div class="wrap">
-    <p class="kicker">06 / Before</p>
-    <h2 id="before-h" class="sr">Amazon and Cummins</h2>
-    <h3 class="pull">Pilots are cheap. Site twelve is where you learn what you actually built.</h3>
-    <p class="before-lede">Seven years at Amazon. Before that, Cummins.</p>
     <div class="vign">
-      <div class="vg vg-amzn">
-        <h3 class="vg-h">Amazon <span>2015 to 2022</span></h3>
-        <figure>
+      <figure>
         <svg viewBox="0 0 360 220" role="img" aria-label="Checkout-free store: ceiling cameras with overlapping sensor fields over shelves, one item tracked">
           <path class="hair" d="M10 22H350M10 192H350"/>
           <g class="cone"><path d="M78 30L28 192H128Z"/><path d="M180 30L130 192H230Z"/><path d="M282 30L232 192H332Z"/></g>
@@ -482,9 +255,9 @@ a:hover{color:var(--copper)}
           <circle cx="90" cy="129" r="15" fill="none" stroke="#A2502A" stroke-width="1.5"/>
           <path d="M90 108v8M90 142v8M69 129h8M103 129h8" stroke="#A2502A" stroke-width="1.5"/>
         </svg>
-        <figcaption><span class="label">Go &middot; checkout-free retail</span>Founding-team work on computer vision and sensor fusion for checkout-free stores.</figcaption>
+        <figcaption><span class="label">Amazon &middot; Go</span>Founding-team work on computer vision and sensor fusion.</figcaption>
       </figure>
-        <figure>
+      <figure>
         <svg viewBox="0 0 360 220" role="img" aria-label="Pack cell: a six-axis arm placing an item into a box on a conveyor, inside a dashed safety envelope">
           <path class="hair" d="M10 192H350"/>
           <path d="M175 192A85 85 0 0 1 345 192" fill="none" stroke="#A2502A" stroke-width="1.5" stroke-dasharray="4 5"/>
@@ -496,12 +269,9 @@ a:hover{color:var(--copper)}
           <g class="s bg"><circle cx="260" cy="172" r="4"/><circle cx="250" cy="108" r="4"/><circle cx="198" cy="92" r="4"/></g>
           <rect class="cu" x="176" y="120" width="16" height="12"/>
         </svg>
-        <figcaption><span class="label">Robotics &middot; fulfillment automation</span>Pack and warehouse automation and functional safety, from pilot cell to production.</figcaption>
+        <figcaption><span class="label">Amazon &middot; Robotics</span>Pack and warehouse automation and functional safety, pilot to production.</figcaption>
       </figure>
-      </div>
-      <div class="vg">
-        <h3 class="vg-h">Cummins <span>2011 to 2015</span></h3>
-        <figure>
+      <figure>
         <svg viewBox="0 0 360 220" role="img" aria-label="Class 8 conventional truck with the engine and vehicle controller highlighted">
           <path class="hair" d="M10 192H350"/>
           <g class="s"><path d="M40 166H312M60 166V158H90"/>
@@ -512,28 +282,46 @@ a:hover{color:var(--copper)}
           <g class="s bg"><circle cx="78" cy="174" r="18"/><circle cx="122" cy="174" r="18"/><circle cx="276" cy="174" r="18"/></g>
           <g class="s"><circle cx="78" cy="174" r="5"/><circle cx="122" cy="174" r="5"/><circle cx="276" cy="174" r="5"/></g>
         </svg>
-        <figcaption><span class="label">Commercial vehicles</span>Horsepower before compute: advanced vehicle electronics for Kenworth and Peterbilt trucks on ISX, ISB, and related powertrains.</figcaption>
+        <figcaption><span class="label">Cummins</span>Advanced vehicle electronics on ISX, ISB, and related powertrains.</figcaption>
       </figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec bench" aria-labelledby="bench-h">
+  <div class="wrap">
+    <p class="kicker">04 / Hands-on</p>
+    <h2 id="bench-h">Research, IP, and the bench at home</h2>
+    <div class="grid shelf">
+      <figure class="b601"><img src="/assets/b601-arm.webp" alt="B601 robotic arm with its gripper extended" width="976" height="947" loading="lazy" decoding="async"></figure>
+      <figure class="yah"><img src="/assets/yahboom-rover.webp" alt="Yahboom mecanum-wheel rover seen from above" width="406" height="482" loading="lazy" decoding="async"></figure>
+      <div class="ip">
+        <div><p class="label">Patents</p><p class="t">3 granted, more pending, in machine vision, sensor fusion, and robotics.</p></div>
+        <div><p class="label">Research</p><p class="t">TRiX: neuro-symbolic safety for foundation-model agents in robotic disassembly.</p><p class="meta">Manuscript under review</p></div>
       </div>
+    </div>
+    <div class="grid caps">
+      <p class="cap-a"><span class="label">B601 arm</span>CAN-bus motors, custom joint-level control at 200 Hz. A manipulation and safety testbed.</p>
+      <p class="cap-b"><span class="label">Yahboom rover</span>LiDAR mapping, perception, and autonomy experiments.</p>
     </div>
   </div>
 </section>
 
 <section class="also" aria-labelledby="also-h">
   <div class="wrap">
-    <h2 id="also-h" class="kicker">07 / Also</h2>
+    <h2 id="also-h" class="kicker">05 / Ecosystem</h2>
     <ul>
       <li>CES Innovation Awards judge, Advanced Mobility and Robotics</li>
       <li>UW CoMotion Innovation Gap Fund judge</li>
       <li>Purdue advisory work</li>
       <li>IEEE Indiana Section Vice Chair, through 2015</li>
-      <li>Patents in machine vision, sensor fusion, and robotics</li>
     </ul>
   </div>
 </section>
 
 <section class="wrap contact" id="contact" aria-labelledby="contact-h">
-  <h2 id="contact-h" class="kicker">08 / Contact</h2>
+  <p class="kicker">06 / Contact</p>
+  <h2 id="contact-h">Investor and partner conversations welcome.</h2>
   <!--email_off--><p class="mail"><a href="mailto:stavand@ieee.org">stavand@ieee.org</a></p><!--email_on-->
   <ul>
     <li><a href="tel:+12154100092">+1 215 410 0092</a></li>
@@ -541,7 +329,6 @@ a:hover{color:var(--copper)}
     <li><a href="https://mefferdi.com" rel="noopener">mefferdi.com</a></li>
   </ul>
 </section>
-
 </main>
 
 <footer class="wrap foot"><p>&copy; 2026 Stavan Dholakia</p></footer>
