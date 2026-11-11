@@ -58,6 +58,21 @@ a:hover{color:var(--copper)}
 .cta a:first-child{padding:.7rem 1.1rem;background:var(--on-deep);color:var(--deep);text-decoration:none}
 .cta a:first-child:hover{background:var(--copper-l);color:var(--deep)}
 .cta a:last-child{align-self:center}
+.pills{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
+.pills li{padding:.4rem .7rem;border:1px solid var(--deep-rule);font:500 .7rem/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--on-deep)}
+.cta a+a{align-self:center}
+.papers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:clamp(2rem,5vw,3rem);border-top:2px solid var(--ink)}
+.papers li{display:flex;flex-direction:column;padding:1.6rem 1.5rem 1.8rem 0;border-bottom:1px solid var(--rule)}
+.papers li:not(:nth-child(3n+1)){padding-left:1.5rem;border-left:1px solid var(--rule)}
+.papers .st{font:500 .66rem/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--copper)}
+.papers h3{margin-top:.6rem;font-size:1.6rem;line-height:1.1}
+.papers .what{margin-top:.6rem;font-size:.93rem;line-height:1.5;color:var(--ink-2)}
+.papers .why{margin-top:.9rem;padding-top:.8rem;border-top:1px solid var(--rule);font-family:var(--serif);font-size:1.05rem;line-height:1.4}
+.papers .why .label{display:block;margin-bottom:.3rem;font-family:var(--mono)}
+.papers .lk{margin-top:auto;padding-top:1rem;font-size:.9rem}
+.morecell{background:var(--paper-2)}
+.morecell .t{margin-top:.6rem;font-family:var(--serif);font-size:1.3rem;line-height:1.3}
+.papers li.morecell{padding-right:1.5rem}
 .hero-img{grid-column:7/13}
 .hero-img img{width:112%;max-width:none;height:auto;margin-left:-6%}
 
@@ -146,6 +161,11 @@ a:hover{color:var(--copper)}
   .vign svg{max-width:440px}
   .tl-row,.axis{grid-template-columns:9rem 1fr}
 }
+@media (max-width:860px){
+  .papers{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .papers li,.papers li:not(:nth-child(3n+1)){padding:1.4rem 1.25rem 1.6rem 0;border-left:0}
+  .papers li:nth-child(even){padding-left:1.25rem;border-left:1px solid var(--rule)}
+}
 @media (max-width:760px){
   .hero-text,.hero-img{grid-column:1/-1}
   .hero-img{order:-1}
@@ -162,6 +182,10 @@ a:hover{color:var(--copper)}
   .also ul{flex-direction:column}
   .also li:not(:last-child)::after{content:none}
   .also li+li{padding-top:.4rem;border-top:1px solid var(--rule)}
+}
+@media (max-width:560px){
+  .papers{grid-template-columns:1fr}
+  .papers li,.papers li:nth-child(even){padding-left:0;border-left:0}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
@@ -182,8 +206,14 @@ a:hover{color:var(--copper)}
       <p class="kicker">Profile</p>
       <h1 id="name">Stavan Dholakia</h1>
       <p class="role">Co-founder and Technical Lead, Mefferdi <span>&middot; Seattle, Washington</span></p>
-      <p class="thesis">Fifteen years taking robots, perception systems, and infrastructure from pilot to production. Now building subsea vehicles at Mefferdi.</p>
-      <p class="cta"><!--email_off--><a href="mailto:stavand@ieee.org">Email me</a><!--email_on--><a href="https://mefferdi.com" rel="noopener">mefferdi.com</a></p>
+      <p class="thesis">Building safe, autonomous physical AI and perception systems for extreme environments, from cloud-scale compute to GPS-denied robots.</p>
+      <ul class="pills">
+        <li>Founding team, Amazon Go</li>
+        <li>Amazon Robotics, 43 sites</li>
+        <li>Cloud AI infrastructure</li>
+        <li>Co-founder, Mefferdi</li>
+      </ul>
+      <p class="cta"><!--email_off--><a href="mailto:stavand@ieee.org">Email me</a><!--email_on--><a href="https://scholar.google.com/citations?user=tO8oU9yp5JkC" rel="noopener">Google Scholar</a><a href="https://github.com/stavanio" rel="noopener">GitHub</a></p>
     </div>
     <figure class="hero-img">
       <img src="/assets/mefferdi-vehicle.webp" alt="Mefferdi subsea vehicle with twin hulls, thrusters, lights, and camera housings" width="1355" height="1087" decoding="async" fetchpriority="high">
@@ -205,9 +235,58 @@ a:hover{color:var(--copper)}
   </div>
 </section>
 
+<section class="sec res" id="research" aria-labelledby="res-h">
+  <div class="wrap">
+    <p class="kicker">02 / Research</p>
+    <h2 id="res-h">Physical AI research, built on real hardware</h2>
+    <ul class="papers">
+      <li>
+        <p class="st">ICRA 2026 workshop, spotlight</p>
+        <h3>Perception Debt</h3>
+        <p class="what">A formal model of how small, individually tolerable perception errors accumulate and compound until a robot crosses a safety threshold.</p>
+        <p class="why"><span class="label">Why it matters</span>Turns &ldquo;the camera is a bit off&rdquo; into a measurable safety budget, with an estimate of how long a robot has before it fails.</p>
+        <p class="lk"><a href="https://github.com/stavanio/perception-debt" rel="noopener">Code</a></p>
+      </li>
+      <li>
+        <p class="st">Under review, IEEE T-RO</p>
+        <h3>SESR-Bench</h3>
+        <p class="what">Clearance-aware evaluation of visual-inertial odometry: 7 algorithms, 6 sequences, 210 trajectories.</p>
+        <p class="why"><span class="label">Why it matters</span>Five centimeters of drift is fine in a warehouse aisle and fatal in a 12 cm gap. This scores localization against the free space a robot actually has.</p>
+        <p class="lk"><a href="https://github.com/stavanio/sesr" rel="noopener">Code</a></p>
+      </li>
+      <li>
+        <p class="st">Under review, Communications Engineering</p>
+        <h3>TRiX</h3>
+        <p class="what">A neuro-symbolic runtime safety layer that checks policy- and VLM-generated robot commands against physics-derived limits before execution.</p>
+        <p class="why"><span class="label">Why it matters</span>A general-purpose AI model can propose a plausible action with no idea whether it will strip a thread or crack a board. TRiX sits between the model and the motors.</p>
+        <p class="lk"><a href="https://github.com/stavanio/trix-disasm-suite" rel="noopener">Code</a></p>
+      </li>
+      <li>
+        <p class="st">Working paper</p>
+        <h3>LWSD-Bench</h3>
+        <p class="what">A single diagnostic for how fast a robot&rsquo;s world model goes stale as perception latency grows, running as a ROS 2 node on real hardware.</p>
+        <p class="why"><span class="label">Why it matters</span>Shows why a bigger, slower model can make a robot less safe, not more, and measures it on a live rover.</p>
+        <p class="lk"><a href="https://github.com/stavanio/lwsd-bench" rel="noopener">Code</a></p>
+      </li>
+      <li>
+        <p class="st">Working paper</p>
+        <h3>OVAC</h3>
+        <p class="what">Open-vocabulary detection and aerial-ground coordination, evaluated for search-and-rescue scenarios.</p>
+        <p class="why"><span class="label">Why it matters</span>Lets a drone and a ground robot look for things they were never trained on, using models small enough to run onboard.</p>
+        <p class="lk"><a href="https://github.com/stavanio/ovac" rel="noopener">Code</a></p>
+      </li>
+      <li class="morecell">
+        <p class="st">Full record</p>
+        <p class="t">Papers, citations, and co-authors.</p>
+        <p class="lk"><a href="https://scholar.google.com/citations?user=tO8oU9yp5JkC" rel="noopener">Google Scholar</a> &middot; <a href="https://orcid.org/0009-0003-9795-5611" rel="noopener">ORCID</a> &middot; <a href="https://github.com/stavanio" rel="noopener">GitHub</a></p>
+      </li>
+    </ul>
+  </div>
+</section>
+
 <section class="sec" aria-labelledby="tr-h">
   <div class="wrap">
-    <p class="kicker">02 / Track record</p>
+    <p class="kicker">03 / Track record</p>
     <h2 id="tr-h" class="pull">Pilots are cheap. Site twelve is where you learn what you actually built.</h2>
     <div class="tl" role="img" aria-label="Career timeline: Cummins 2011 to 2015; Amazon 2015 to 2022, covering robotics safety, Amazon Go, and pack automation; Azure infrastructure 2022 to now; Mefferdi now">
       <div class="tl-row"><p class="who">Cummins<span>Vehicle electronics</span></p><div class="track"><span class="bar alt" style="--s:3.1%;--e:30.9%"></span></div></div>
@@ -267,7 +346,7 @@ a:hover{color:var(--copper)}
 
 <section class="sec mef" id="mefferdi" aria-labelledby="co-h">
   <div class="wrap">
-    <p class="kicker">03 / Now</p>
+    <p class="kicker">04 / Now</p>
     <div class="grid mef-g">
       <div class="mef-t">
         <h2 id="co-h">Mefferdi</h2>
@@ -288,14 +367,14 @@ a:hover{color:var(--copper)}
 
 <section class="sec bench" aria-labelledby="bench-h">
   <div class="wrap">
-    <p class="kicker">04 / Hands-on</p>
-    <h2 id="bench-h">Research, IP, and the bench at home</h2>
+    <p class="kicker">05 / Lab</p>
+    <h2 id="bench-h">From the lab</h2>
     <div class="grid shelf">
       <figure class="b601"><img src="/assets/b601-arm.webp" alt="B601 robotic arm with its gripper extended" width="976" height="947" loading="lazy" decoding="async"></figure>
       <figure class="yah"><img src="/assets/yahboom-rover.webp" alt="Yahboom mecanum-wheel rover seen from above" width="406" height="482" loading="lazy" decoding="async"></figure>
       <div class="ip">
+        <div><p class="label">Edge compute</p><p class="t">Jetson Orin nodes running ROS 2 for perception and latency experiments.</p></div>
         <div><p class="label">Patents</p><p class="t">3 granted, more pending, in machine vision, sensor fusion, and robotics.</p></div>
-        <div><p class="label">Research</p><p class="t">TRiX: neuro-symbolic safety for foundation-model agents in robotic disassembly.</p><p class="meta">Manuscript under review</p></div>
       </div>
     </div>
     <div class="grid caps">
@@ -307,7 +386,7 @@ a:hover{color:var(--copper)}
 
 <section class="also" aria-labelledby="also-h">
   <div class="wrap">
-    <h2 id="also-h" class="kicker">05 / Ecosystem</h2>
+    <h2 id="also-h" class="kicker">06 / Ecosystem</h2>
     <ul>
       <li>CES Innovation Awards judge, Advanced Mobility and Robotics</li>
       <li>UW CoMotion Innovation Gap Fund judge</li>
@@ -318,13 +397,16 @@ a:hover{color:var(--copper)}
 </section>
 
 <section class="wrap contact" id="contact" aria-labelledby="contact-h">
-  <p class="kicker">06 / Contact</p>
-  <h2 id="contact-h">Open to conversations with investors, partners, and builders.</h2>
+  <p class="kicker">07 / Contact</p>
+  <h2 id="contact-h">Advisory, physical AI research collaborations, and stealth inquiries.</h2>
   <!--email_off--><p class="mail"><a href="mailto:stavand@ieee.org">stavand@ieee.org</a></p><!--email_on-->
   <ul>
     <li><a href="tel:+12154100092">+1 215 410 0092</a></li>
-    <li>Seattle, Washington</li>
+    <li><a href="https://scholar.google.com/citations?user=tO8oU9yp5JkC" rel="noopener">Google Scholar</a></li>
+    <li><a href="https://github.com/stavanio" rel="noopener">GitHub</a></li>
+    <li><a href="https://orcid.org/0009-0003-9795-5611" rel="noopener">ORCID</a></li>
     <li><a href="https://mefferdi.com" rel="noopener">mefferdi.com</a></li>
+    <li>Seattle, Washington</li>
   </ul>
 </section>
 </main>
